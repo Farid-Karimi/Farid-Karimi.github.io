@@ -1,295 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />
-    <meta name="description" content="computer science student based in Tehran, Iran." />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farid Karimi | Portfolio</title>
+    <link rel="icon" href="assets\favicon.png" type="image/png">
+    <style>
+        :root {
+            --background: #121212;
+            --foreground: rgb(235, 235, 235);
+            --foreground-muted: rgb(170, 170, 170);
+            --primary: #FF5C00;
+            --secondary: #3949AB;
+            --border-color: #444;
+            --font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
 
-    <!-- metas -->
-    <title>Farid Karimi - Portfolio</title>
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Farid Karimi - Portfolio" />
-    <meta property="og:site_name" content="Portfolio" />
-    <!-- <meta property="og:url" content="https://multikitty-portfolio.onrender.com" /> -->
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background);
+            color: var(--foreground);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 16px;
+        }
 
-    <!-- styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-    <link media="all" rel="stylesheet" href="/build.css" />
-  </head>
-  <body>
-    <div class="FakeScroll"></div>
-    <div class="gl"></div>
-    <div class="Voile"></div>
-    <div class="Menu" data-component="Menu">
-      <nav>
-        <a href="#" data-id="About" data-route="about">About</a>
-        <a href="#" data-id="Work" data-route="work">Work</a>
-        <a class="selected" href="/" data-id="Home" data-route="home" alt="home" title="home"><span class="Menu-invisible">Home</span><span class="gg-symbol gg-symbol--disc"></span></a>
-      </nav>
+        .portfolio-container {
+            width: 100%;
+            max-width: 80ch;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        main {
+            padding: 1rem 2rem;
+            flex-grow: 1;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-weight: bold;
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--foreground);
+            text-decoration: none;
+            padding: 0.25rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav a.active {
+            background-color: var(--primary);
+            color: var(--foreground);
+            font-weight: bold;
+        }
+
+        .blinking-cursor {
+            display: inline-block;
+            width: 0.5em;
+            height: 1em;
+            background-color: var(--primary);
+            animation: blink 1s step-end infinite;
+            margin-left: 0.25em;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% { background-color: transparent; }
+        }
+        
+        #splash {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        #home {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        #home pre {
+            font-size: 1.2rem;
+            line-height: 1.2;
+            color: var(--foreground);
+            margin-bottom: 2rem;
+        }
+
+        h1, h2 {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+           color: var(--foreground);
+           margin-top: 2rem;
+        }
+
+        p {
+            line-height: 1.6;
+            color: var(--foreground-muted);
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            text-decoration: underline; 
+            text-underline-offset: 4px;
+        }
+
+        .tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .tool {
+            border: 1px solid var(--border-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.9em;
+        }
+
+        .project {
+            margin-bottom: 2.5rem;
+        }
+        
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            border-left: 3px solid var(--foreground-muted);
+            padding-left: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group:focus-within {
+            border-left-color: var(--primary);
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input, .form-group textarea {
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 0.75rem;
+            color: var(--foreground);
+            font-family: var(--font-family);
+            font-size: 1em;
+        }
+
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: var(--foreground-muted);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        #contact-form button {
+            background-color: var(--primary);
+            color: var(--foreground);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-family: var(--font-family);
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+        
+        #form-submitted-message {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--foreground);
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+        
+        .social-links a {
+            margin: 0 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.75rem;
+            color: var(--foreground-muted);
+            font-size: 0.9em;
+            border-top: 1px solid var(--border-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="splash">
+        <span id="typewriter"></span>
     </div>
-    <div class="Container">
-      <div class="Content">
-        <div class="Section Home" data-component="Home">
-          <div class="Home-content">
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3"></div>
-              <div class="gg-symbol gg-symbol--disc"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--8 gg-symbol--gradient"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--square"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3"></div>
-              <div class="gg-symbol gg-symbol--disc"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--8 gg-symbol--gradient"></div>
-            </div>
-            <div class="gg"></div>
-            <div class="gg gg--indent">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--square"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient"></div>
-            </div>
-            <div class="Title" data-component="Title">
-              <h1>Farid Karimi</h1>
-              <h2>computer science student.</h2>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--disc"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--4 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--9 gg-symbol--gradient"></div>
-            </div>
-            <div class="gg"></div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2 gg-symbol--gradient"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--8 gg-symbol--gradient"></div>
-            </div>
-            <div class="gg gg-last">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--square"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient"></div>
-            </div>
-            <div class="Arrow" data-component="Arrow" data-ref="arrow"></div>
-          </div>
-        </div>
-        <div class="Section Work" data-component="Work">
-          <div class="Work-content">
-            <h3><span class="gg-symbol--gradient"></span>Work</h3>
-            <ul class="Work-list">
-              <li>
-                <div class="WorkItem" data-component="WorkItem" data-src="code-verse.png">
-                  <div class="WorkItem-content">
-                    <span class="WorkItem-title">Digital Garden</span>
-                    <span class="WorkItem-dot"></span>
-                    <a class="WorkItem-link" href="https://github.com/Farid-Karimi/Codeverse" target="_blank"><i class="fab fa-github"></i></a>
-                    <p class="WorkItem-description">my personal knowledge base and digital garden! </p>
-                    <div class="WorkItem-tags">
-                      <span>markdown</span>
-                      <span>html</span>
-                      <span>css</span>
-                      <span>javascript</span>
-                      <span>note-taking</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="WorkItem" data-component="WorkItem" data-src="pic-link.png">
-                  <div class="WorkItem-content">
-                    <span class="WorkItem-title">PicLink</span>
-                    <span class="WorkItem-dot"></span>
-                    <a class="WorkItem-link" href="https://github.com/Farid-Karimi/PicLink" target="_blank"><i class="fab fa-github"></i></a>
-                    <p class="WorkItem-description">A fun social app that allows you to share photos and connect with others</p>
-                    <div class="WorkItem-tags">
-                      <span>django</span>
-                      <span>css</span>
-                      <span>html</span>
-                      <span>javascript</span>
-                      <span>python</span>
-                      <span>sqlite</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="WorkItem" data-component="WorkItem" data-src="spotify.jpg">
-                  <div class="WorkItem-content">
-                    <span class="WorkItem-title">Lyrik</span>
-                    <span class="WorkItem-dot"></span>
-                    <a class="WorkItem-link" href="https://github.com/Farid-Karimi/Lyrik" target="_blank"><i class="fab fa-github"></i></a>
-                    <p class="WorkItem-description">This Spotify clone app is built entirely in Java and java-fx</p>
-                    <div class="WorkItem-tags">
-                      <span>java</span>
-                      <span>java-fx</span>
-                      <span>music-player</span>
-                      <span>spotify-clone</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="WorkItem" data-component="WorkItem" data-src="Root-Finder.png">
-                  <div class="WorkItem-content">
-                    <span class="WorkItem-title">Root Finder</span>
-                    <span class="WorkItem-dot"></span>
-                    <a class="WorkItem-link" href="https://github.com/Farid-Karimi/Root-Finder" target="_blank"><i class="fab fa-github"></i></a>
-                    <p class="WorkItem-description">A python program that uses diverse numerical analysis methods to find roots of mathematical functions.</p>
-                    <div class="WorkItem-tags">
-                      <span>python</span>
-                      <span>qt</span>
-                      <span>numerical analysis</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="WorkItem" data-component="WorkItem" data-src="Dark-Room.png">
-                  <div class="WorkItem-content">
-                    <span class="WorkItem-title">Dark Room</span>
-                    <span class="WorkItem-dot"></span>
-                    <a class="WorkItem-link" href="https://github.com/Farid-Karimi/Dark-Room" target="_blank"><i class="fab fa-github"></i></a>
-                    <p class="WorkItem-description">A python-based photo editing tool that leverages the powerful libraries Pillow and Tkinter</p>
-                    <div class="WorkItem-tags">
-                      <span>python</span>
-                      <span>tkinter</span>
-                      <span>pillow</span>
-                      <span>image processing</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="WorkItem" data-component="WorkItem" data-src="PacMan.png">
-                  <div class="WorkItem-content">
-                    <span class="WorkItem-title">PacMan</span>
-                    <span class="WorkItem-dot"></span>
-                    <a class="WorkItem-link" href="https://github.com/Farid-Karimi/Pac-Man" target="_blank"><i class="fab fa-github"></i></a>
-                    <p class="WorkItem-description">Pac-Man clone with randomized maps, colors, and leaderboard</p>
-                    <div class="WorkItem-tags">
-                      <span>cli</span>
-                      <span>cpp</span>
-                      <span>path-finding</span>
-                      <span>bfs / dfs</span>
-                      <span>windows.h</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div class="Arrow" data-component="Arrow" data-ref="arrow"></div>
-          </div>
-        </div>
-        <div class="Section About" data-component="About">
-          <div class="About-content">
-            <h3>Hi, I'm Farid.</h3>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--4 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--disc"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--6 gg-symbol--gradient"></div>
-            </div>
-            <p>
-              I'm Farid, a computer science student based in Tehran, Iran.<br />
-              With a deep passion for technology, I'm currently pursuing my studies in computer science.<br />
-              As a student, I am dedicated to expanding my knowledge and skills in various areas of computer science.<br />
-              I have a particular interest in computer graphics, physics engines, artificial intelligence.<br />
-              I am always eager to learn and stay up-to-date with the latest advancements in these fields<br />
-              If you have any questions or need assistance, feel free to reach out.
-            </p>
-            <p>
-              <b>Core Tech Stack</b><br />
-              <span class="About-skills">
-                <b>Programming: </b>Python, Java, C++, JavaScript, SQL, NoSQL, Git/GitHub<br />
-                <b>Frameworks/Libraries: </b>NumPy, Django, Matplotlib, pandas, beautiful soup, pygame.<br />
-                <b>Miscellaneous: </b>Shell (Bash), LATEX (Overleaf/R Markdown), Microsoft Office, Adobe Photoshop, Adobe Illustrator<br />
-              </span>
-              
-              <div style="font-size: 25px;">
-                <a class="WorkItem-link" href="https://www.linkedin.com/in/farid-kmi" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a class="WorkItem-link" href="https://www.instagram.com/__farid_karimi__/" target="_blank"><i class="fab fa-github"></i></a>
-                <a class="WorkItem-link" href="https://github.com/Farid-Karimi/Pac-Man" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a class="WorkItem-link" href="https://unsplash.com/@farid_karimi" target="_blank"><i class="fab fa-unsplash"></i></a>
-              </div>
-            </p>
+
+    <div class="portfolio-container" id="portfolio" style="display: none;">
+        <header>
+            <div class="logo">TSP | Portfolio<span class="blinking-cursor"></span></div>
+            <nav>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home-view" class="active">
+                <pre>
+████████╗███████╗██████╗ 
+╚══██╔══╝██╔════╝██╔══██╗
+   ██║   ███████╗██████╔╝
+   ██║   ╚════██║██╔═══╝ 
+   ██║   ███████║██║     
+   ╚═╝   ╚══════╝╚═╝     
+                </pre>
+                <p>Inspired by <a href="https://github.com/theSa1/sa1-portfolio-tui" target="_blank">t.sa1.dev</a></p>
+                <p>Go to <a href="https://github.com/Farid-Karimi" target="_blank">TSP</a> for code</p>
+            </section>
             
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--rect gg-symbol--6 gg-symbol--gradient"></div>
-            </div>
-            <div class="gg">
-              <div class="gg-symbol gg-symbol--square"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
-              <div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient"></div>
-            </div>
-            <div class="Arrow Arrow--reversed" data-component="Arrow" data-ref="arrow"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="Footer" data-component="Footer">
-      <ul>
-        <li><a href="mailto:fkarimi8320@gmail.com">Email</a></li>
-        <li>
-          <a href="https://github.com/Farid-Karimi" target="_blank" rel="noopener">Github</a>
-        </li>
-        <li>
-          <a href="assets/Farid_resume.pdf" download>Resume</a>
-        </li>
-      </ul>
-    </div>
-    <div class="Loader" data-component="Loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #19252b; z-index: 10">
-      <div class="gg">
-        <div class="Loader-scaler">
-          <div class="gg-symbol gg-symbol--rect gg-symbol--9 gg-symbol--gradient"></div>
-        </div>
-      </div>
-    </div>
-    <script src="/critical.js"></script>
+            <section id="about-view">
+                <h1>About Me</h1>
+                <p>
+                    I’m a Computer Science student who’s driven by the idea of creating things that matter whether that means tools used by many people or projects that make life a little better for someone out there. For me, technology is more than just code; it’s a way to be both creative and useful, and to make the most of my limited time by pushing for better conditions through what I build.
+                </p>
+                <p>
+                    Outside of tech, I’m fascinated by the beauty of creation in different forms—photography, origami, even woodworking (though I’ve only admired it from afar). These interests remind me that building something meaningful can start from the simplest materials, whether it’s paper, wood, or lines of code. 
+                </p>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35394000-1"></script>
+                <h1>Tools & Technologies</h1>
+
+                <h2>Languages</h2>
+                <div class="tool-list">
+                    <span class="tool"><a href="https://isocpp.org" target="_blank">C++</a></span>
+                    <span class="tool"><a href="https://www.python.org" target="_blank">Python</a></span>
+                    <span class="tool"><a href="https://www.java.com" target="_blank">Java</a></span>
+                </div>
+
+                <h2>Frameworks & Libraries</h2>
+                <div class="tool-list">
+                    <span class="tool"><a href="https://pytorch.org" target="_blank">PyTorch</a></span>
+                    <span class="tool"><a href="https://scikit-learn.org" target="_blank">Scikit-learn</a></span>
+                    <span class="tool"><a href="https://pandas.pydata.org" target="_blank">Pandas</a></span>
+                    <span class="tool"><a href="https://numpy.org" target="_blank">NumPy</a></span>
+                    <span class="tool"><a href="https://matplotlib.org" target="_blank">Matplotlib</a></span>
+                    <span class="tool"><a href="https://seaborn.pydata.org" target="_blank">Seaborn</a></span>
+                </div>
+
+                <h2>Tools & Platforms</h2>
+                <div class="tool-list">
+                    <span class="tool"><a href="https://git-scm.com" target="_blank">Git</a></span>
+                    <span class="tool"><a href="https://github.com" target="_blank">GitHub</a></span>
+                    <span class="tool"><a href="https://huggingface.co" target="_blank">Hugging Face</a></span>
+                    <span class="tool"><a href="https://www.postgresql.org" target="_blank">PostgreSQL</a></span>
+                    <span class="tool"><a href="https://jupyter.org" target="_blank">Jupyter Notebook</a></span>
+                    <span class="tool"><a href="https://www.latex-project.org" target="_blank">LaTeX</a></span>
+                </div>
+            </section>
+                        
+            <section id="projects-view">
+                <h1>Projects</h1>
+
+                <div class="project">
+                    <h2><a href="https://github.com/Farid-Karimi/Movie-Recommender" target="_blank">Movie Recommendation System</a></h2>
+                    <p>
+                        CineMatch is a movie recommendation system designed to provide personalized movie suggestions. 
+                        It build on data from The Movie Database (TMDb) and MovieLens to deliver relevant recommendations.
+                    </p>
+                    <div class="tool-list">
+                        <span class="tool">Python</span>
+                        <span class="tool">Content-based filtering</span>
+                        <span class="tool">Collaborative filtering</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h2><a href="https://github.com/Farid-Karimi/Equa" target="_blank">AI-Powered Burnout Coach</a></h2>
+                    <p>
+                        Equa is a comprehensive system for burnout detection that uses machine learning and a large language model (LLM) 
+                        to provide a proactive approach to workplace wellness through analyzing key employee metrics
+                    </p>
+                    <div class="tool-list">
+                        <span class="tool">Python</span>
+                        <span class="tool">PyTorch · Scikit-learn</span>
+                        <span class="tool">Large Language Model (LLM)</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h2><a href="https://github.com/Farid-Karimi/Fine-Grained-Classification" target="_blank">Sentiment Analysis for Fine-Grained Classification</a></h2>
+                    <p>
+                        A fine-grained sentiment analysis project exploring classical and modern approaches to classify subtle emotional cues.
+                        Implementations include SVMs, RNNs and logistic regression, as well as transformer-based models (BERT / DistilBERT), with experiments run using PyTorch and related tooling.
+                    </p>
+                    <div class="tool-list">
+                        <span class="tool">Python</span>
+                        <span class="tool">PyTorch</span>
+                        <span class="tool">BERT · DistilBERT</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h2><a href="https://github.com/Farid-Karimi/Pac-Man" target="_blank">Pac-Man — Simplified CLI Version</a></h2>
+                    <p>
+                        A Pac-Man inspired game with randomly generated maps, custom colors, and a leaderboard. 
+                        Maze generation uses DFS, ghost behavior is driven by BFS, visuals are rendered using ASCII art and Unicode, and progress/leaderboard data is saved to a text file.
+                    </p>
+                    <div class="tool-list">
+                        <span class="tool">C++</span>
+                        <span class="tool">CLI / ASCII visuals</span>
+                        <span class="tool">DFS · BFS</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact-view">
+                 <div id="contact-form-container">
+                    <h1>Contact Me</h1>
+                    <form id="contact-form" action="https://formspree.io/f/xgvlqwjl" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required minlength="3" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required minlength="10" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <p>Use Tab to navigate.</p>
+                 </div>
+
+                 <div id="form-submitted-message" style="display: none;">
+                     <p>Thank you for your message! I will get back to you soon.</p>
+                 </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/farid-karimi" target="_blank">GitHub</a> |
+                    <a href="https://unsplash.com/@farid_karimi" target="_blank">Unsplash</a> |
+                    <a href="https://www.linkedin.com/in/farid-kmi" target="_blank">LinkedIn</a> |
+                    <a href="https://farid-karimi.github.io/Codeverse/" target="_blank">Website</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            Press 'q' to quit | Use nav links or arrow keys to navigate
+        </footer>
+    </div>
+
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-35394000-1");
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const typewriterElement = document.getElementById('typewriter');
+        const textToWrite = "Farid Karimi | Portfolio";
+        const totalFrames = 30;
+        const totalDuration = 1500;
+        const framesPerChar = totalFrames / textToWrite.length;
+        const delay = 50;
+        
+        let i = 0;
+        function type() {
+            if (i < textToWrite.length) {
+                typewriterElement.innerHTML = textToWrite.substring(0, i + 1) + '<span class="blinking-cursor"></span>';
+                i++;
+                setTimeout(type, delay);
+            } else {
+                 typewriterElement.innerHTML = textToWrite + '<span class="blinking-cursor"></span>';
+                 setTimeout(showPortfolio, 500);
+            }
+        }
+        
+        function showPortfolio() {
+            const splashScreen = document.getElementById('splash');
+            const portfolio = document.getElementById('portfolio');
+            splashScreen.style.display = 'none';
+            portfolio.style.display = 'flex';
+        }
+
+        type();
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('main section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                const targetId = link.getAttribute('href').substring(1) + '-view';
+                document.getElementById(targetId).classList.add('active');
+                link.classList.add('active');   
+            });
+        });
+
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('contact-form-container').style.display = 'none';
+                    document.getElementById('form-submitted-message').style.display = 'block';
+                    form.reset();
+                } else {
+                    alert('Oops! There was a problem submitting your form. Please try again.');
+                }
+            }).catch(error => {
+                alert('Oops! There was a network error. Please try again.');
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'q') {
+                document.body.innerHTML = '<div style="font-size: 2rem; text-align: center; padding: 2rem;">Connection closed.</div>';
+            }
+        });
+    const findCurrentIndex = () => {
+        let currentIndex = -1;
+        navLinks.forEach((link, index) => {
+            if (link.classList.contains('active')) {
+                currentIndex = index;
+            }
+        });
+        return currentIndex;
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            const currentIndex = findCurrentIndex();
+            let nextIndex;
+
+            if (e.key === 'ArrowLeft') {
+                // Move to the previous tab, looping to the end if necessary
+                nextIndex = currentIndex > 0 ? currentIndex - 1 : navLinks.length - 1;
+            } else { // ArrowRight
+                // Move to the next tab, looping to the start if necessary
+                nextIndex = currentIndex < navLinks.length - 1 ? currentIndex + 1 : 0;
+            }
+
+            // Simulate a click on the new tab to trigger the view change
+            if (nextIndex !== -1) {
+                navLinks[nextIndex].click();
+            }
+        }
+    });
+
+    });
+
     </script>
 
-    <!-- Libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
-
-    <!-- Scripts -->
-    <script src="/build.js"></script>
-  </body>
+</body>
 </html>
