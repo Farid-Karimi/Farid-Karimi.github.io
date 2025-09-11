@@ -30,22 +30,24 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-size: 16px;
+            font-size: 12px;
         }
 
         .portfolio-container {
             width: 100%;
-            max-width: 80ch;
+            max-width: 100ch;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            height: 90vh;
         }
 
         main {
             padding: 1rem 2rem;
             flex-grow: 1;
+            overflow-y: auto;
         }
 
         section {
@@ -113,18 +115,6 @@
             align-items: center;
             font-size: 1.5rem;
             font-weight: bold;
-        }
-
-        #home {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        #home pre {
-            font-size: 1.2rem;
-            line-height: 1.2;
-            color: var(--foreground);
-            margin-bottom: 2rem;
         }
 
         h1, h2 {
@@ -254,6 +244,76 @@
             border-top: 1px solid var(--border-color);
         }
 
+        #terminal {
+            background-color: #131313;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 1rem;
+            height: 65vh;
+            overflow-y: auto;
+            cursor: text;
+            font-size: 1.1em;
+        }
+
+        #terminal:focus {
+            outline: none;
+        }
+
+        #terminal-output p {
+            margin-bottom: 0.5em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
+
+        .terminal-input-line {
+            display: flex;
+            align-items: center;
+        }
+
+        .prompt {
+            color: var(--primary);
+            margin-right: 0.5em;
+            font-weight: bold;
+        }
+
+        .input {
+            word-break: break-all;
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 0.5em;
+            height: 1em;
+            background-color: var(--foreground-muted);
+            animation: blink 1s step-end infinite;
+            margin-left: 0.1em;
+            vertical-align: middle;
+        }
+
+        pre.easter-egg {
+            line-height: 1.2;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--border-color);
+            border-radius: 10px; 
+            border: 3px solid var(--background);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--foreground-muted);
+        }
+
     </style>
 </head>
 <body>
@@ -264,7 +324,7 @@
 
     <div class="portfolio-container" id="portfolio" style="display: none;">
         <header>
-            <div class="logo">TSP | Portfolio<span class="blinking-cursor"></span></div>
+            <div class="logo">Farid Karimi | Portfolio<span class="blinking-cursor"></span></div>
             <nav>
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -275,16 +335,14 @@
 
         <main>
             <section id="home-view" class="active">
-                <pre>
-████████╗███████╗██████╗ 
-╚══██╔══╝██╔════╝██╔══██╗
-   ██║   ███████╗██████╔╝
-   ██║   ╚════██║██╔═══╝ 
-   ██║   ███████║██║     
-   ╚═╝   ╚══════╝╚═╝     
-                </pre>
-                <p>Inspired by <a href="https://github.com/theSa1/sa1-portfolio-tui" target="_blank">t.sa1.dev</a></p>
-                <p>Go to <a href="https://github.com/Farid-Karimi" target="_blank">TSP</a> for code</p>
+                <div id="terminal" tabindex="0">
+                    <div id="terminal-output"></div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">></span>
+                        <span id="terminal-input" class="input"></span>
+                        <span class="blinking-cursor terminal-cursor"></span>
+                    </div>
+                </div>
             </section>
             
             <section id="about-view">
@@ -426,9 +484,6 @@
 
         const typewriterElement = document.getElementById('typewriter');
         const textToWrite = "Farid Karimi | Portfolio";
-        const totalFrames = 30;
-        const totalDuration = 1500;
-        const framesPerChar = totalFrames / textToWrite.length;
         const delay = 50;
         
         let i = 0;
@@ -493,45 +548,177 @@
             });
         });
 
+        const terminal = document.getElementById('terminal');
+        const terminalOutput = document.getElementById('terminal-output');
+        const terminalInput = document.getElementById('terminal-input');
+
+        const welcomeMessage = "████████╗███████╗██████╗ \n╚══██╔══╝██╔════╝██╔══██╗\n   ██║   ███████╗██████╔╝\n   ██║   ╚════██║██╔═══╝ \n   ██║   ███████║██║     \n   ╚═╝   ╚══════╝╚═╝     \nWelcome to my portfolio!\nType 'help' to see available commands.";
+        const commands = {
+            help: "Available commands:\n  about    - Switch to the About page\n  projects - Switch to the Projects page\n  contact  - Switch to the Contact page\n  clear    - Clear the terminal screen",
+            about: "Switching to the About page...",
+            projects: "Switching to the Projects page...",
+            contact: "Switching to the Contact page...",
+            clear: ""
+        };
+        
+const tspAnimation = [
+  `
+   (⌐■_■)
+   <)   )╯
+    /   \\
+   `,
+  `
+   (⌐■_■)
+   \\(   )>
+    /   \\
+   `,
+  `
+   (⌐■_■)
+   <)   )╯
+    /   \\
+   `,
+  `
+   (⌐■_■)
+   \\(   )>
+    /   \\
+   `,
+  `
+   (⌐■_■)
+   <)   )╯
+    /   \\
+   `,
+  `
+   (⌐■_■)
+   \\(   )>
+    /   \\
+   `
+];
+
+
+        function runAnimation(frames) {
+            let frameIndex = 0;
+            const animationElement = document.createElement('pre');
+            animationElement.className = 'easter-egg';
+            terminalOutput.innerHTML = '';
+            terminalOutput.appendChild(animationElement);
+
+            const interval = setInterval(() => {
+                if(frameIndex < frames.length) {
+                    animationElement.textContent = frames[frameIndex];
+                    frameIndex++;
+                } else {
+                    frameIndex = 0;
+                    animationElement.textContent = frames[frameIndex];
+                    frameIndex++;
+                }
+            }, 200);
+        }
+
+        function typeText(element, text, callback) {
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    terminal.scrollTop = terminal.scrollHeight;
+                } else {
+                    clearInterval(interval);
+                    if (callback) callback();
+                }
+            }, 25);
+        }
+
+        function processCommand(command) {
+            const output = document.createElement('p');
+            output.innerHTML = `<span class="prompt">></span> ${command}`;
+            terminalOutput.appendChild(output);
+            
+            if (command === 'tsp') {
+                runAnimation(tspAnimation);
+                return;
+            }
+
+            if (command === 'clear') {
+                terminalOutput.innerHTML = '';
+            } else if (commands[command]) {
+                const response = document.createElement('p');
+                terminalOutput.appendChild(response);
+                typeText(response, commands[command]);
+                
+                if (['about', 'projects', 'contact'].includes(command)) {
+                    document.querySelector(`nav a[href="#${command}"]`).click();
+                }
+            } else {
+                const error = document.createElement('p');
+                terminalOutput.appendChild(error);
+                typeText(error, `Command not found: ${command}. Type 'help' for options.`);
+            }
+            
+            terminalInput.textContent = '';
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        terminal.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                processCommand(terminalInput.textContent.trim().toLowerCase());
+            } else if (e.key === 'Backspace') {
+                e.preventDefault();
+                terminalInput.textContent = terminalInput.textContent.slice(0, -1);
+            } else if (e.key.length === 1) {
+                e.preventDefault();
+                terminalInput.textContent += e.key;
+            }
+        });
+
+        terminal.addEventListener('click', () => {
+            terminal.focus();
+        });
+
+        const initialOutput = document.createElement('p');
+        terminalOutput.appendChild(initialOutput);
+        typeText(initialOutput, welcomeMessage, () => {
+            terminal.focus();
+        });
+
+        const findCurrentIndex = () => {
+            let currentIndex = -1;
+            navLinks.forEach((link, index) => {
+                if (link.classList.contains('active')) {
+                    currentIndex = index;
+                }
+            });
+            return currentIndex;
+        };
+
         document.addEventListener('keydown', (e) => {
-            if (e.key.toLowerCase() === 'q') {
+            const activeEl = document.activeElement;
+            const isTyping = activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl === terminal;
+
+            if (e.key.toLowerCase() === 'q' && !isTyping) {
                 document.body.innerHTML = '<div style="font-size: 2rem; text-align: center; padding: 2rem;">Connection closed.</div>';
             }
-        });
-    const findCurrentIndex = () => {
-        let currentIndex = -1;
-        navLinks.forEach((link, index) => {
-            if (link.classList.contains('active')) {
-                currentIndex = index;
+
+            if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && !isTyping) {
+                e.preventDefault();
+                const currentIndex = findCurrentIndex();
+                let nextIndex;
+
+                if (e.key === 'ArrowLeft') {
+                    nextIndex = currentIndex > 0 ? currentIndex - 1 : navLinks.length - 1;
+                } else {
+                    nextIndex = currentIndex < navLinks.length - 1 ? currentIndex + 1 : 0;
+                }
+                
+                if (nextIndex !== -1) {
+                    navLinks[nextIndex].click();
+                }
             }
         });
-        return currentIndex;
-    };
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-            e.preventDefault();
-            const currentIndex = findCurrentIndex();
-            let nextIndex;
-
-            if (e.key === 'ArrowLeft') {
-                // Move to the previous tab, looping to the end if necessary
-                nextIndex = currentIndex > 0 ? currentIndex - 1 : navLinks.length - 1;
-            } else { // ArrowRight
-                // Move to the next tab, looping to the start if necessary
-                nextIndex = currentIndex < navLinks.length - 1 ? currentIndex + 1 : 0;
-            }
-
-            // Simulate a click on the new tab to trigger the view change
-            if (nextIndex !== -1) {
-                navLinks[nextIndex].click();
-            }
-        }
-    });
 
     });
-
     </script>
 
 </body>
 </html>
+
