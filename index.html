@@ -314,6 +314,67 @@
             background-color: var(--foreground-muted);
         }
 
+        @media screen and (max-width: 768px) {
+
+            body {
+                font-size: 14px; 
+            }
+
+            .portfolio-container {
+                height: 100vh;
+                max-width: 100%;
+                border: none;
+                border-radius: 0;
+            }
+
+            main {
+                padding: 1rem 1.25rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .logo {
+                padding-left: 0;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            #terminal {
+                height: 70vh; 
+                font-size: 1em;
+            }
+
+            #splash {
+                font-size: 1.2rem;
+            }
+
+            #contact-form button {
+                align-self: stretch; 
+                text-align: center;
+            }
+
+            footer {
+                font-size: 0.8em;
+                padding: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
