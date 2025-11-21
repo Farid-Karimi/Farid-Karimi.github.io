@@ -2,7 +2,7 @@
 
 A minimalist, terminal-themed personal portfolio website built with vanilla HTML, CSS, and JavaScript.
 
-This project is inspired by the portfolio at [farid-karimi.github.io](https://farid-karimi.github.io).
+This project is inspired by the portfolio at [https://github.com/theSa1/sa1-portfolio-tui](https://github.com/theSa1/sa1-portfolio-tui).
 
 ## Features
 
