@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
-      base: './',
+      base: '/Farid-Karimi.github.io/',
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
