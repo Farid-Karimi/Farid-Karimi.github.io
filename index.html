@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="dark h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farid Karimi // Portfolio</title>
+  <!-- Favicon: I've added a generated SVG here. Replace 'href' with your file path (e.g., '/favicon.ico') -->
+  <link rel="shortcut icon" href="./assets/favicon-Ixx5LGos.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            phosphor: '#33ff33',
+            'phosphor-dim': 'rgba(51, 255, 51, 0.1)',
+            background: '#0a0a0b',
+            'terminal-gray': '#121214',
+            'border-dim': '#2a2a2d',
+            'text-dim': '#888888',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace'],
+          },
+          animation: {
+            'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glitch': 'glitch 1s linear infinite',
+          },
+          keyframes: {
+            glitch: {
+              '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+              '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+              '62%': { transform: 'translate(0,0) skew(5deg)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Global Reset & Base Styles */
+    html,
+    body,
+    #root {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      /* Prevent body scroll, handle inside layout */
+    }
+
+    body {
+      background-color: #0a0a0b;
+      color: #e5e5e5;
+    }
+
+    /* Noise Effect */
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      filter: contrast(150%) brightness(100%);
+      /* Hardware acceleration */
+      transform: translateZ(0);
+    }
+
+    /* CRT Scanlines */
+    .scanlines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: linear-gradient(to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 0.1) 50%,
+          rgba(0, 0, 0, 0.1));
+      background-size: 100% 4px;
+      z-index: 51;
+    }
+
+    /* Scrollbar Customization */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #2a2a2d;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #33ff33;
+    }
+
+    /* Ghosting Glitch Utilities */
+    .glitch-text {
+      position: relative;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0b;
+    }
+
+    .glitch-text::before {
+      left: 2px;
+      text-shadow: -1px 0 #ff00c1;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    .glitch-text::after {
+      left: -2px;
+      text-shadow: -1px 0 #00fff9;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% {
+        clip: rect(38px, 9999px, 80px, 0);
+      }
+
+      20% {
+        clip: rect(8px, 9999px, 1px, 0);
+      }
+
+      40% {
+        clip: rect(68px, 9999px, 98px, 0);
+      }
+
+      60% {
+        clip: rect(10px, 9999px, 35px, 0);
+      }
+
+      80% {
+        clip: rect(54px, 9999px, 7px, 0);
+      }
+
+      100% {
+        clip: rect(22px, 9999px, 20px, 0);
+      }
+    }
+
+    @keyframes glitch-anim2 {
+      0% {
+        clip: rect(57px, 9999px, 49px, 0);
+      }
+
+      20% {
+        clip: rect(16px, 9999px, 83px, 0);
+      }
+
+      40% {
+        clip: rect(32px, 9999px, 3px, 0);
+      }
+
+      60% {
+        clip: rect(93px, 9999px, 34px, 0);
+      }
+
+      80% {
+        clip: rect(12px, 9999px, 90px, 0);
+      }
+
+      100% {
+        clip: rect(48px, 9999px, 4px, 0);
+      }
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+  <script type="module" crossorigin src="./assets/index-DNCID1BC.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
