@@ -1,0 +1,2 @@
+# Framer client-side routes → exported .html files
+/projects/:slug  /:slug.html  200
