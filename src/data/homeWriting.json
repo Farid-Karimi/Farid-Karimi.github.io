@@ -1,0 +1,326 @@
+{
+ "_key": "59b9b9cd0e32",
+ "_type": "homeWriting",
+ "allContentInfoBlock": {
+  "indent": false,
+  "info": null,
+  "sectionName": null,
+  "titleEn": "All Content ",
+  "titlePrefix": null
+ },
+ "featuredInfoBlock": {
+  "indent": false,
+  "info": null,
+  "sectionName": "sec-02",
+  "titleEn": "Writing",
+  "titlePrefix": "02"
+ },
+ "featuredItems": [
+  {
+   "_id": "253a31fd-30e9-4bf4-930d-b36c2bb3b685",
+   "category": "opinion",
+   "categoryLabel": "Opinion",
+   "description": "I used to tell founders, the reaction you are going to get to your launch is not hate, it’s indifference. By default, nobody cares about your new chain.\nI have to stop telling them that now. Monad just launched this week, and I’ve never seen so much hate about a blockchain that just launched. I’ve been investing into crypto professionally for 7+ years now. Before 2023, almost every chain I’ve ever seen that launched was mostly met with enthusiasm or indifference.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/6424a446131a517bcc80a756b54191298150b856-3216x1802.png"
+   },
+   "title": "In Defense of Exponentials",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://writing.dragonfly.xyz/post/in-defense-of-exponentials ",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "e075b144-14ea-4a0b-b039-a75f09b5e166",
+   "category": "opinion",
+   "categoryLabel": "Opinion",
+   "description": "Stablecoins aren’t just an improvement on or connective tissue for existing payment rails, they allow companies to bypass those legacy rails entirely and collapse the current payments value chain in on itself. Because if you’re stablecoin native, everything is just a book transfer. A new class of companies are being born (or are adapting) today that understand this — and they will drive the re-architecting of how money moves.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/42a63dad10d5798ff8c20e739644c5dfc8c579f0-3216x1802.png"
+   },
+   "title": "Stablecoins and the Collapse of the Legacy Payment Model",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://writing.dragonfly.xyz/post/stablecoins-and-the-collapse-of-the-legacy-payment-model",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "dadc7b5f-a7ff-4045-95e7-5381c9a3cf50",
+   "category": "recruiting",
+   "categoryLabel": "Recruiting",
+   "description": "Compensation is one of the most common topics we’re asked about by the Dragonfly portfolio (and beyond), and for good reason: Reliable industry data in crypto is scarce.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/d6ad57b30c03be04ea9972cf5514c6f483462cbc-3216x1802.png"
+   },
+   "title": "2024/2025 Crypto Compensation Report",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://dccr.dragonfly.xyz/report",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "e2a6431c-59e8-4097-83fb-d26e20916db5",
+   "category": "opinion",
+   "categoryLabel": "Opinion",
+   "description": "Say you want to run a large language model like Llama2–70B. A model this massive requires more than 140GB of memory, which means you can’t run the raw model on your home machine. What are your options? You might jump to a cloud provider, but you might not be too keen on trusting a single centralized company to handle this workload for you and hoover up all your usage data. Then what you need is decentralized inference, which lets you run ML models without relying on any single provider.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/b2b9be1eb026c8c6ee92f4af723d3dce29441aa9-3000x1800.png"
+   },
+   "title": "Don’t Trust, Verify: An Overview of Decentralized Inference",
+   "watchLink": {
+    "ariaLabel": "Google Aria Label",
+    "linkHref": "https://writing.dragonfly.xyz/post/dont-trust-verify-an-overview-of-decentralized-inference",
+    "linkLabel": "View"
+   }
+  }
+ ],
+ "writingCategories": [
+  {
+   "_id": "645dc610-94a2-4531-be58-844d0cdcb55d",
+   "label": "Announcements",
+   "value": "announcements"
+  },
+  {
+   "_id": "5a9d8cdb-594d-4c49-9fde-342f8d2bb3e9",
+   "label": "Comment Letter",
+   "value": "comment-letter"
+  },
+  {
+   "_id": "54e9ce28-237c-4678-85e3-9477db32bafa",
+   "label": "Legal",
+   "value": "legal"
+  },
+  {
+   "_id": "e2dbd994-2485-4e9d-9580-3ccf2f877107",
+   "label": "Opinion",
+   "value": "opinion"
+  },
+  {
+   "_id": "4b311cd3-2bfe-4608-b6ee-e2d77bcce0ba",
+   "label": "Recruiting",
+   "value": "recruiting"
+  },
+  {
+   "_id": "4c8ee77a-6779-4edb-a3ea-355d5919e329",
+   "label": "Research",
+   "value": "research"
+  }
+ ],
+ "writingContentAll": [
+  {
+   "_id": "00f93dcf-9858-41b8-8d4b-3d2e881430c7",
+   "category": "research",
+   "categoryLabel": "Research",
+   "description": "We analyzed data from over 12 airdrops (11 geoblocked airdrops and 1 non-geoblocked airdrop as a control) that conducted airdrops between 2019 and 2023 to determine the economic impact of having blocked U.S. users from claiming tokens.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/3f3c514531f4bc92bd438651bfebba85af317fae-2048x683.webp"
+   },
+   "title": "Dragonfly’s State of Airdrops Report 2025",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://airdropreport2025.dragonfly.xyz/",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "253a31fd-30e9-4bf4-930d-b36c2bb3b685",
+   "category": "opinion",
+   "categoryLabel": "Opinion",
+   "description": "I used to tell founders, the reaction you are going to get to your launch is not hate, it’s indifference. By default, nobody cares about your new chain.\nI have to stop telling them that now. Monad just launched this week, and I’ve never seen so much hate about a blockchain that just launched. I’ve been investing into crypto professionally for 7+ years now. Before 2023, almost every chain I’ve ever seen that launched was mostly met with enthusiasm or indifference.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/6424a446131a517bcc80a756b54191298150b856-3216x1802.png"
+   },
+   "title": "In Defense of Exponentials",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://writing.dragonfly.xyz/post/in-defense-of-exponentials ",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "361b75f2-d278-467a-9edb-2f836fc1f160",
+   "category": "recruiting",
+   "categoryLabel": "Recruiting",
+   "description": "Designing token-based compensation is a hard problem, especially given token liquidity and the volatility in crypto markets. To date, the topic has been fraught with murky tax/legal implications, fragmented data, and no well-defined playbook. Moreover, many founders and hiring managers navigate this process using cumbersome spreadsheets and half-baked software that don’t fully tackle the thorny issues.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/c39831331a288c0918cba711818d4bc52cc2531f-1600x800.webp"
+   },
+   "title": "The Comprehensive Guide to Token Compensation",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://writing.dragonfly.xyz/post/the-comprehensive-guide-to-token-compensation",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "42adf3fc-1399-4769-baf1-16dcea2bcd24",
+   "category": "recruiting",
+   "categoryLabel": "Recruiting",
+   "description": "Crypto moves fast, and industry compensation data is scarce — especially comprehensive analyses. This can be a stumbling block for startups seeking to strategically navigate their growth. Our first annual compensation survey was developed in response to this gap.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/0e88193711dd6541c88148beea08c3a7ce638287-2048x1072.webp"
+   },
+   "title": "Dragonfly’s 2023 Crypto Compensation Report",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://dccr23.dragonfly.xyz/",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "58763f32-506f-407e-b244-ad5c6e0c5ec0",
+   "category": "research",
+   "categoryLabel": "Research",
+   "description": "Stablecoins have quickly become a credible alternative to traditional payment and settlement networks. In just five years, their supply has grown from under $10 billion to over $240 billion.",
+   "image": {
+    "alt": "Alt text test",
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/199e2ac00c054024ff6720d3200b587d834d290f-1536x1024.webp"
+   },
+   "title": "Stablecoin Payments from the Ground Up: A $94 Billion Study by Artemis, Castle Island, and Dragonfly",
+   "watchLink": {
+    "ariaLabel": "Google Aria Label",
+    "linkHref": "https://reports.artemisanalytics.com/stablecoins/artemis-stablecoin-payments-from-the-ground-up-2025.pdf",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "a0a7b57e-c6c8-4f54-992a-737f4499dd23",
+   "category": "research",
+   "categoryLabel": "Research",
+   "description": "Dragonfly includes Dragonfly Ventures, Dragonfly Liquid, and now Metastable, the oldest crypto hedge fund, which we recently acquired. Metastable is one of the longest-running funds in crypto history, co-founded in 2014 by Naval Ravikant, and was an early investor into Ethereum, Avalanche, Cosmos, Starkware, NEAR, Zcash, Filecoin, Dfinity, and Algorand. With its addition, Dragonfly is now more expansive than it’s ever been. And it’s time for a refresh.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/3fb50a3e7728a826af23828df94efbf6c49861f7-1600x800.webp"
+   },
+   "title": "(Re) Introducing Dragonfly",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://writing.dragonfly.xyz/post/re-introducing-dragonfly",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "a20d5d92-1c06-44b2-93bc-55f6601d131b",
+   "category": "opinion",
+   "categoryLabel": "Opinion",
+   "description": "Whenever an emerging narrative enters the public discourse, the prevailing thesis gets reduced to its most memetic form. Intuitively, when no one can empirically prove what will happen, provocation is rewarded over nuance.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/a4ba67c7196da60d7d1c095b6b0e037d8a970a40-1600x800.jpg"
+   },
+   "title": "The Agentic Economy Will Be Massive. Agentic Commerce Won't",
+   "watchLink": {
+    "ariaLabel": "Google Aria Label",
+    "linkHref": "https://writing.dragonfly.xyz/post/the-agentic-economy-will-be-massive-agentic-commerce-won-t",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "dadc7b5f-a7ff-4045-95e7-5381c9a3cf50",
+   "category": "recruiting",
+   "categoryLabel": "Recruiting",
+   "description": "Compensation is one of the most common topics we’re asked about by the Dragonfly portfolio (and beyond), and for good reason: Reliable industry data in crypto is scarce.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/d6ad57b30c03be04ea9972cf5514c6f483462cbc-3216x1802.png"
+   },
+   "title": "2024/2025 Crypto Compensation Report",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://dccr.dragonfly.xyz/report",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "e075b144-14ea-4a0b-b039-a75f09b5e166",
+   "category": "opinion",
+   "categoryLabel": "Opinion",
+   "description": "Stablecoins aren’t just an improvement on or connective tissue for existing payment rails, they allow companies to bypass those legacy rails entirely and collapse the current payments value chain in on itself. Because if you’re stablecoin native, everything is just a book transfer. A new class of companies are being born (or are adapting) today that understand this — and they will drive the re-architecting of how money moves.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/42a63dad10d5798ff8c20e739644c5dfc8c579f0-3216x1802.png"
+   },
+   "title": "Stablecoins and the Collapse of the Legacy Payment Model",
+   "watchLink": {
+    "ariaLabel": null,
+    "linkHref": "https://writing.dragonfly.xyz/post/stablecoins-and-the-collapse-of-the-legacy-payment-model",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "e2a6431c-59e8-4097-83fb-d26e20916db5",
+   "category": "opinion",
+   "categoryLabel": "Opinion",
+   "description": "Say you want to run a large language model like Llama2–70B. A model this massive requires more than 140GB of memory, which means you can’t run the raw model on your home machine. What are your options? You might jump to a cloud provider, but you might not be too keen on trusting a single centralized company to handle this workload for you and hoover up all your usage data. Then what you need is decentralized inference, which lets you run ML models without relying on any single provider.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/b2b9be1eb026c8c6ee92f4af723d3dce29441aa9-3000x1800.png"
+   },
+   "title": "Don’t Trust, Verify: An Overview of Decentralized Inference",
+   "watchLink": {
+    "ariaLabel": "Google Aria Label",
+    "linkHref": "https://writing.dragonfly.xyz/post/dont-trust-verify-an-overview-of-decentralized-inference",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "e5b4c057-0e87-4163-a55c-9c1989d55f92",
+   "category": "research",
+   "categoryLabel": "Research",
+   "description": "Stablecoin payments hit $10.2B monthly, up 70% since February and 137% since Aug '24, now at a $122B annual rate.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/1bcae51039195f8573e1dda48f5e65d5eb7f8047-1376x768.jpg"
+   },
+   "title": "Fall Update: Stablecoin Payments from the Ground Up (Part 2)",
+   "watchLink": {
+    "ariaLabel": "Google Aria Label",
+    "linkHref": "https://reports.artemisanalytics.com/stablecoins/artemis-stablecoin-payments-from-the-ground-up-2025.pdf",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "e65c96d3-a860-4b0b-836b-8656513fd7b9",
+   "category": "comment-letter",
+   "categoryLabel": "Comment Letter",
+   "description": "As a leading investor in digital assets, Dragonfly recognizes that the sustainable growth of new financial technologies requires robust frameworks to combat illicit activity. ",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/b2bd6dd125949b1021c17bf2e2821ce315a0c51e-1600x800.png"
+   },
+   "title": "Request for Comment on Innovative Methods To Detect Illicit Activity Involving Digital Assets",
+   "watchLink": {
+    "ariaLabel": "Google Aria Label",
+    "linkHref": "https://writing.dragonfly.xyz/post/comments-on-fr-doc-2025-15697-request-for-comment-on-innovative-methods-to-detect-illicit",
+    "linkLabel": "View"
+   }
+  },
+  {
+   "_id": "eb2aa5e0-d50b-4ee7-bc50-fcafb39be312",
+   "category": "legal",
+   "categoryLabel": "Legal",
+   "description": "For employees, consultants, and advisors at crypto startups, understanding token compensation is just as critical as understanding equity. Tokens may look deceptively simple—digital units recorded on a blockchain—but in practice, they come with their own thicket of legal, tax, and liquidity issues. Unlike equity, which has decades of case law and established market norms behind it, token compensation sits in a fast-evolving, often ambiguous regulatory environment.",
+   "image": {
+    "alt": null,
+    "src": "https://cdn.sanity.io/images/oqc9t74k/production/b4a371940320dd0e1ec2c556b0f424db14325dc9-1600x800.png"
+   },
+   "title": "Read the Fine Print: Token Compensation",
+   "watchLink": {
+    "ariaLabel": "Google Aria Label",
+    "linkHref": "https://writing.dragonfly.xyz/post/read-the-fine-print-token-compensation",
+    "linkLabel": "View"
+   }
+  }
+ ]
+}
