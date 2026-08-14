@@ -1,0 +1,75 @@
+<svg viewBox="0 0 185 35.4" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1"><defs><filter color-interpolation-filters="sRGB" id="dfly-white"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0" type="matrix"></feColorMatrix></filter></defs><g filter="url(#dfly-white)">
+  
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        mask: url(#mask);
+      }
+
+      .st2 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st3 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st4 {
+        fill: url(#linear-gradient3);
+      }
+
+      .st5 {
+        fill: url(#linear-gradient);
+      }
+
+      .st6 {
+        fill: #fff;
+      }
+
+      .st7 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <mask maskUnits="userSpaceOnUse" height="35.5" width="27.3" y="-.1" x="6.1" id="mask">
+      <g id="hibachi-beta_svg__a">
+        <path d="M33.4-.1H6.1v35.5h27.3V-.1Z" class="st6"></path>
+      </g>
+    </mask>
+    <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="translate(0 1529.3) scale(1 -1)" y2="1521.3" x2="15.6" y1="1513.4" x1="26.4" id="linear-gradient">
+      <stop stop-color="#ffa205" offset="0"></stop>
+      <stop stop-color="#ffe600" offset="1"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="translate(0 1529.3) scale(1 -1)" y2="1523.4" x2="23.3" y1="1494.6" x1="23.7" id="linear-gradient1">
+      <stop stop-color="#fe344a" offset="0"></stop>
+      <stop stop-color="#fedc3c" offset="1"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="translate(0 1529.3) scale(1 -1)" y2="1526.6" x2="10.4" y1="1492.3" x1="20.3" id="linear-gradient2">
+      <stop stop-color="#4e08bf" offset="0"></stop>
+      <stop stop-color="#b10c92" offset=".3"></stop>
+      <stop stop-color="#e40e6b" offset=".5"></stop>
+      <stop stop-color="#ffe171" offset="1"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="translate(0 1529.3) scale(1 -1)" y2="1504.8" x2="17.9" y1="1523.9" x1="27.9" id="linear-gradient3">
+      <stop stop-color="#ffdc01" offset="0"></stop>
+      <stop stop-opacity="0" stop-color="#ffe171" offset="1"></stop>
+    </linearGradient>
+    <clipPath id="clippath">
+      <rect height="22.5" width="138.8" y="12.9" x="41.2" class="st0"></rect>
+    </clipPath>
+  </defs>
+  <g class="st1">
+    <g>
+      <path d="M24,20c-.7.5-1.6.8-2.5.8-2.3,0-4.5-1.8-4.3-4.2,0-.7.2-1.4.6-2,5.5-8.8,0-14.5,0-14.5,0,0,9.3,5.8,6.8,18-.1.7-.3,1.3-.6,1.9" class="st5"></path>
+      <path d="M15.9,32.1c-5.6-6,1.2-16.6,2.1-17.9-.5.7-.7,1.5-.7,2.3,0,2.3,1.9,4.2,4.2,4.2.9,0,1.8-.3,2.5-.8,3.6-2.4,4.4-8.8,4.4-8.8h.2c3.1,2.6,4.9,6.2,4.9,10.5,0,3.8-1.8,7.6-4.4,10,0,0-7.5,6.7-13.1.4" class="st3"></path>
+      <path d="M29,31.8c-1.4,1.2-7.9,6-13.1.4-5.1-5.6.5-15.3,1.8-17.5h0c5.7-8.9,0-14.7,0-14.7,0,0,.9,4.7-6.6,11.2-.3.3-.6.5-.9.8-5.4,5.2-5.5,13.8-.3,19.2,2.6,2.6,6.1,4.1,9.8,4.1,3.5,0,6.7-1.4,9.2-3.6" class="st2"></path>
+      <path d="M29,31.8c-1.4,1.2-7.9,6-13.1.4-5.1-5.6.5-15.3,1.8-17.5h0c5.7-8.9,0-14.7,0-14.7,0,0,.9,4.7-6.6,11.2-.3.3-.6.5-.9.8-5.4,5.2-5.5,13.8-.3,19.2,2.6,2.6,6.1,4.1,9.8,4.1,3.5,0,6.7-1.4,9.2-3.6" class="st4"></path>
+    </g>
+  </g>
+  <g class="st7">
+    <path d="M57,12.9v9h-11.3v-9h-4.5v22.5h4.5v-9h11.3v9h4.5V12.9h-4.5ZM70.6,12.9h-4.5v22.5h4.5V12.9ZM95.6,21.9v-5.3c0-2.1-1.7-3.7-3.8-3.8h-16.5v22.5h16.5c2.1,0,3.7-1.7,3.8-3.8v-4.9c0-1.2-.6-2.2-1.7-2.7,1-.2,1.7-1.1,1.7-2.2M79.8,17.4h10.5c.4,0,.8.3.8.8v3c0,.4-.3.7-.8.8h-10.5v-4.5ZM79.8,30.9v-4.5h10.5c.4,0,.8.3.8.8v3c0,.4-.3.7-.8.8h-10.5ZM120.9,14.4v-1.5c-11.4,0-20.6,9.3-20.6,20.7v1.9h4.5v-1.9c0-.9,0-1.8.2-2.6h11.4v4.5h4.5V14.4M106.4,26.4c2-4.1,5.6-7.1,10-8.4v8.4h-10ZM145.9,17.4v-4.5h-20.3v9.6c0,7.1,5.8,13,13,13h7.3v-4.5h-7.3c-4.7,0-8.4-3.8-8.4-8.4v-5.1h15.8ZM166.3,12.9v9h-11.3v-9h-4.5v22.5h4.5v-9h11.3v9h4.5V12.9h-4.5ZM180,12.9h-4.5v22.5h4.5V12.9Z" class="st6"></path>
+  </g>
+</g></svg>

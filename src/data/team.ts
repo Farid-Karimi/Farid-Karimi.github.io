@@ -1,5 +1,12 @@
 import raw from "./homeTeam.json";
+import manifestRaw from "../../public/images/manifest.json";
 import type { InfoBlock, LinkItem, Media } from "./site";
+
+const manifest = manifestRaw as unknown as Record<string, string>;
+
+function local(src: string): string {
+  return manifest[src.split("?")[0]] ?? src;
+}
 
 export interface TeamMember {
   id: string;
@@ -51,7 +58,7 @@ function toMember(m: RawTeamMember): TeamMember {
     role: m.role,
     bio: m.bio,
     quote: m.quote,
-    media: { src: m.media.src, alt: m.media.alt, type: m.media.type },
+    media: { src: local(m.media.src), alt: m.media.alt, type: m.media.type },
     social: social.map(toLink),
   };
 }

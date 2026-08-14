@@ -1,5 +1,12 @@
 import raw from "./homeWriting.json";
+import manifestRaw from "../../public/images/manifest.json";
 import type { InfoBlock, LinkItem, Media } from "./site";
+
+const manifest = manifestRaw as unknown as Record<string, string>;
+
+function local(src: string): string {
+  return manifest[src.split("?")[0]] ?? src;
+}
 
 export interface WritingPost {
   id: string;
@@ -46,7 +53,7 @@ function toPost(p: RawWritingPost): WritingPost {
     category: p.category,
     categoryLabel: p.categoryLabel,
     description: p.description,
-    image: { src: p.image.src, alt: p.image.alt },
+    image: { src: local(p.image.src), alt: p.image.alt },
     watchLink: {
       label: p.watchLink?.linkLabel ?? "",
       href: p.watchLink?.linkHref ?? "",
