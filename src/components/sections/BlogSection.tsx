@@ -9,7 +9,7 @@ function formatDate(iso: string): string {
 }
 
 export default function BlogSection() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().slice(0, 3);
 
   return (
     <section id="blog" className="home-blog layout-block">
