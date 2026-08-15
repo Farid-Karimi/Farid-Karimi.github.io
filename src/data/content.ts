@@ -318,11 +318,6 @@ export const contactChannels = [
     note: "fkarimi8320@gmail.com",
   },
   {
-    label: "Telegram",
-    href: "https://t.me/faridkarimi",
-    note: "fastest reply",
-  },
-  {
     label: "Unsplash",
     href: "https://unsplash.com/@farid_karimi",
     note: "landscape & travel photography",

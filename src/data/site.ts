@@ -119,12 +119,6 @@ export const NAV_FOOTER_LINKS: FooterLink[] = [
     noNewTab: false,
   },
   {
-    label: "Telegram",
-    href: site.telegram,
-    type: "external",
-    noNewTab: false,
-  },
-  {
     label: "Unsplash",
     href: "https://unsplash.com/@farid_karimi",
     type: "external",
@@ -148,7 +142,6 @@ export const FOOTER_SECTIONS: FooterSection[] = [
       { label: "GitHub", href: site.github, type: "external", noNewTab: false },
       { label: "LinkedIn", href: site.linkedin, type: "external", noNewTab: false },
       { label: "Email", href: `mailto:${site.email}`, type: "external", noNewTab: false },
-      { label: "Telegram", href: site.telegram, type: "external", noNewTab: false },
       { label: "Unsplash", href: "https://unsplash.com/@farid_karimi", type: "external", noNewTab: false },
     ],
   },
