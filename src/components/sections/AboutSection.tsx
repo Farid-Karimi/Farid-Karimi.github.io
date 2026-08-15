@@ -1,6 +1,8 @@
 import { about } from "@/data/content";
 import StatsSection from "./StatsSection";
 
+const LABELS = ["What I build", "My background", "How I work"];
+
 export default function AboutSection() {
   return (
     <section id="about" className="home-about layout-block">
@@ -22,7 +24,7 @@ export default function AboutSection() {
           <div className="layout-grid">
             {about.paragraphs.map((paragraph, i) => (
               <div className="info" key={i}>
-                <div className="label">{i === 0 ? "Bio" : "Teaching"}</div>
+                <div className="label">{LABELS[i] ?? "Bio"}</div>
                 <p className="p description-text">{paragraph}</p>
               </div>
             ))}

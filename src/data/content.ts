@@ -16,7 +16,7 @@ export const hero = {
   headline: "FARID KARIMI",
   subtitle:
     "ML systems end-to-end — recommenders, LLM agents, bioinformatics pipelines.",
-  statusLine: "CS @ Shahid Beheshti University · B.Sc. 2026",
+  statusLine: "CS Student & AI/ML Engineer, Tehran",
 };
 
 export const marquee = [
@@ -24,17 +24,55 @@ export const marquee = [
   "LLM Agents",
   "Bioinformatics",
   "PyTorch",
+  "LangGraph",
+  "LangChain",
   "Scikit-learn",
   "n8n",
+  "Docker",
+  "Power BI",
   "Data Pipelines",
   "Streamlit",
 ];
 
+export const services = [
+  {
+    title: "AI/ML Engineering",
+    description:
+      "Building intelligent systems with PyTorch, LangGraph, LangChain, N8N, Scikit-learn, and LLM APIs. Specializing in AI Agents, recommendation systems, NLP, and predictive models.",
+  },
+  {
+    title: "Data Science",
+    description:
+      "End-to-end data pipelines using pandas, NumPy, PowerBI and SQL. Experience with large record datasets and statistical analysis.",
+  },
+  {
+    title: "Photography",
+    description:
+      "Landscape and travel photography. Published on Unsplash with 2M+ views, capturing the world through my lens.",
+  },
+  {
+    title: "Research & Academic Work",
+    description:
+      "Scientific reviewer for CS Department Journal. Published section on ML in Mental Health and Suicide Risk Detection.",
+  },
+  {
+    title: "Software Development",
+    description:
+      "Full-stack deployment with Docker, Git, Streamlit, and cloud APIs. Built Telegram bots and web applications.",
+  },
+  {
+    title: "Teaching & Mentoring",
+    description:
+      "Head TA across 27+ course credit hours. Supervisor & Teacher at Salam High School, Head of Scientific Committee, coordinating seminars and academic events.",
+  },
+];
+
 export const about = {
-  hook: "From raw data to deployed systems.",
+  hook: "I build AI systems that turn research into practical tools.",
   paragraphs: [
-    "I'm an ML-focused computer scientist who likes going from raw data to a deployed system — and understanding what happens at every step in between. My work spans recommenders (hybrid content-based + collaborative, RMSE 0.89), LLM agents that turn YouTube, papers and the web into research summaries inside Telegram, and bioinformatics pipelines that classify COVID-19 patients from single-cell RNA-seq at the resolution of 98,979 cells.",
-    "I've also spent three years on the teaching side of Shahid Beheshti University — leading and TA-ing over 27 credit hours of CS courses and serving as Head of the Scientific Committee — which taught me that the best way to know a subject is to explain it to someone else. That's what this blog is for.",
+    "My work spans machine learning, large language models, recommender systems, and intelligent automation, with a focus on creating software that solves real problems rather than showcasing algorithms.",
+    "My journey combines research, engineering, and education. I've contributed to AI research, mentored hundreds of students as a TA, reviewed academic papers for the department journal, and continuously explore new developments in intelligent systems.",
+    "I believe great software comes from balancing curiosity with engineering discipline. I like exploring new ideas, but I care just as much about clean implementation, maintainability, and building products that deliver real value.",
   ],
 };
 
@@ -66,7 +104,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "ai-research-agent",
-    title: "AI-Agent for Automated Research Summaries",
+    title: "AI-Agent for Research Channel",
     year: 2025,
     role: "Solo Developer",
     stack: ["n8n", "Gemini API", "OpenRouter", "DeepSeek", "Telegram API"],
@@ -142,7 +180,7 @@ export const projects: Project[] = [
   },
   {
     slug: "scrnaseq-covid",
-    title: "Single-cell RNA-seq Analysis with scVI",
+    title: "Single-cell RNA-seq Analysis",
     year: 2025,
     role: "Researcher",
     stack: ["Python", "Scanpy", "scVI", "Scikit-learn", "UMAP"],
@@ -197,10 +235,18 @@ export const experience = [
   {
     title: "Teaching Assistant & Head TA",
     org: "Department of Computer Science, Shahid Beheshti University",
-    period: "2022 – 2026",
+    period: "2023 – 2026",
     points: [
       "Led and taught across 27 credit hours of undergraduate CS courses.",
       "Coordinated lab sessions, grading, and office hours; mentored junior TAs.",
+    ],
+  },
+  {
+    title: "Supervisor & Teacher",
+    org: "Salam High School",
+    period: "2023 – 2026",
+    points: [
+      "Taught programming and data science courses; supervised student projects.",
     ],
   },
   {
@@ -275,5 +321,10 @@ export const contactChannels = [
     label: "Telegram",
     href: "https://t.me/faridkarimi",
     note: "fastest reply",
+  },
+  {
+    label: "Unsplash",
+    href: "https://unsplash.com/@farid_karimi",
+    note: "landscape & travel photography",
   },
 ];

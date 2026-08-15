@@ -46,9 +46,9 @@ export default function ContactSection() {
       <div className="common-info">
         <div className="common-info__title" role="heading" aria-level={2}>
           <div className="common-info__title--line h2-fluid theme-contrast">
-            <span>05</span>
+            <span>06</span>
           </div>
-          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-05">
+          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-06">
             <span>Contact</span>
           </div>
         </div>

@@ -67,6 +67,14 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     number: "03",
+    label: "Services",
+    href: "#services",
+    type: "anchor",
+    noNewTab: true,
+    ariaLabel: "Services Section",
+  },
+  {
+    number: "04",
     label: "Experience",
     href: "#experience",
     type: "anchor",
@@ -74,7 +82,7 @@ export const NAV_ITEMS: NavItem[] = [
     ariaLabel: "Experience Section",
   },
   {
-    number: "04",
+    number: "05",
     label: "Blog",
     href: "/blog",
     type: "internal",
@@ -82,7 +90,7 @@ export const NAV_ITEMS: NavItem[] = [
     ariaLabel: "Blog Page",
   },
   {
-    number: "05",
+    number: "06",
     label: "Contact",
     href: "#contact",
     type: "anchor",
@@ -116,6 +124,12 @@ export const NAV_FOOTER_LINKS: FooterLink[] = [
     type: "external",
     noNewTab: false,
   },
+  {
+    label: "Unsplash",
+    href: "https://unsplash.com/@farid_karimi",
+    type: "external",
+    noNewTab: false,
+  },
 ];
 
 export const FOOTER_SECTIONS: FooterSection[] = [
@@ -135,6 +149,7 @@ export const FOOTER_SECTIONS: FooterSection[] = [
       { label: "LinkedIn", href: site.linkedin, type: "external", noNewTab: false },
       { label: "Email", href: `mailto:${site.email}`, type: "external", noNewTab: false },
       { label: "Telegram", href: site.telegram, type: "external", noNewTab: false },
+      { label: "Unsplash", href: "https://unsplash.com/@farid_karimi", type: "external", noNewTab: false },
     ],
   },
   {

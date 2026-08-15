@@ -2370,6 +2370,63 @@ button {
   }
 }
 
+.home-services__list {
+  margin-top: var(--spacer-32);
+}
+
+.home-services__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--spacer-48) 1fr;
+  gap: var(--spacer-16);
+  align-items: baseline;
+  padding: var(--spacer-24) 0;
+  border-top: 1px solid var(--grey-200);
+  opacity: 0;
+  transform: translateY(10%);
+  transition: opacity 0.85s var(--ease-out-cubic), transform 0.85s var(--ease-out-cubic);
+}
+
+.home-services__row.is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-services__number {
+  color: var(--theme-contrast);
+}
+
+.home-services__body .h3 {
+  transition: color 0.35s var(--ease-out-cubic);
+}
+
+.home-services__body .p {
+  margin-top: var(--spacer-8);
+}
+
+.home-services__arrow {
+  position: absolute;
+  right: 0;
+  top: var(--spacer-24);
+  width: 12px;
+  height: auto;
+  display: flex;
+  opacity: 0;
+  transform: translate(-4px);
+  transition: opacity 0.35s var(--ease-out-cubic), transform 0.35s var(--ease-in-out-sine);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-services__row:hover .h3 {
+    color: var(--theme-contrast);
+  }
+
+  .home-services__row:hover .home-services__arrow {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /* ===== Blog page ===== */
 
 .blog-page,

@@ -6,9 +6,9 @@ export default function ExperienceSection() {
       <div className="common-info">
         <div className="common-info__title" role="heading" aria-level={2}>
           <div className="common-info__title--line h2-fluid theme-contrast">
-            <span>03</span>
+            <span>04</span>
           </div>
-          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-03">
+          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-04">
             <span>Experience</span>
           </div>
         </div>
