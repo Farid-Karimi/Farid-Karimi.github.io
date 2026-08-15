@@ -14,8 +14,7 @@ export const site = {
 
 export const hero = {
   headline: "FARID KARIMI",
-  subtitle:
-    "AI/ML Engineer — building recommenders, LLM agents, and end-to-end ML pipelines.",
+  subtitle: "AI/ML Engineer building recommenders, agents, and pipelines.",
   statusLine: "CS Student & AI/ML Engineer, Tehran",
 };
 
