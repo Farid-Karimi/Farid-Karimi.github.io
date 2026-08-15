@@ -1,13 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { hero, site } from "@/data/content";
-import ArrowIcon from "./ArrowIcon";
+import { hero } from "@/data/content";
 import GrainientBackground from "./GrainientBackground";
 
 export default function HomeHero() {
-  const [popupOpen, setPopupOpen] = useState(false);
-
   const chars = hero.headline.split("");
 
   return (
@@ -30,29 +26,6 @@ export default function HomeHero() {
         <p className="p">{hero.subtitle}</p>
         <p className="label">{hero.statusLine}</p>
       </div>
-      <div className="home-hero__toast">
-        <button className="a-div cta" onClick={() => setPopupOpen(true)}>
-          <span className="label">Get in touch</span>
-          <ArrowIcon />
-        </button>
-      </div>
-      {popupOpen ? (
-        <div className="home-hero__popup" role="dialog" aria-modal="true" onClick={() => setPopupOpen(false)}>
-          <div className="home-hero__popup--content" onClick={(e) => e.stopPropagation()}>
-            <p className="h3">{site.name}</p>
-            <p className="p">{hero.subtitle}</p>
-            <p className="p">{hero.statusLine}</p>
-            <a className="a-div cta" href={`mailto:${site.email}`}>
-              <span className="label">{site.email}</span>
-              <ArrowIcon />
-            </a>
-            <button className="a-div cta" onClick={() => setPopupOpen(false)}>
-              <span className="label">Close</span>
-              <ArrowIcon />
-            </button>
-          </div>
-        </div>
-      ) : null}
     </section>
   );
 }
