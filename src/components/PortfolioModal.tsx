@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import type { PortfolioItem } from "@/data/portfolio";
 import PlusIcon from "./PlusIcon";
 
@@ -7,6 +10,13 @@ interface PortfolioModalProps {
 }
 
 export default function PortfolioModal({ item, onClose }: PortfolioModalProps) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
   return (
     <div className="modal-content portfolio" role="dialog" aria-modal="true">
       <div className="modal-content__body">

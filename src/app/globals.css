@@ -1631,7 +1631,7 @@ button {
 /* ===== LargeText ===== */
 
 .home-large-text {
-  margin-top: var(--spacer-112);
+  margin-top: var(--spacer-128);
 }
 
 .home-large-text__content {
