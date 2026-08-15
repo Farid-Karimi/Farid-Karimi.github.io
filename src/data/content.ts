@@ -4,7 +4,7 @@ export const site = {
   github: "https://github.com/Farid-Karimi",
   githubPages: "https://farid-karimi.github.io",
   linkedin: "https://www.linkedin.com/in/farid-kmi",
-  telegram: "https://t.me/faridkarimi",
+  telegram: "https://t.me/farid_kmi",
   location: "Tehran, Iran",
   status: "CS @ Shahid Beheshti University · B.Sc. 2026",
   gpa: "18.85/20",
@@ -15,7 +15,7 @@ export const site = {
 export const hero = {
   headline: "FARID KARIMI",
   subtitle:
-    "ML systems end-to-end — recommenders, LLM agents, bioinformatics pipelines.",
+    "AI/ML Engineer — building recommenders, LLM agents, and end-to-end ML pipelines.",
   statusLine: "CS Student & AI/ML Engineer, Tehran",
 };
 
