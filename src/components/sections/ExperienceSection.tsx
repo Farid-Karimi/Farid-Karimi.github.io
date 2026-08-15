@@ -4,9 +4,12 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="home-experience layout-block">
       <div className="common-info">
-        <div className="common-info__title">
-          <div className="common-info__title--line has-label">
-            <span>03 — Experience</span>
+        <div className="common-info__title" role="heading" aria-level={2}>
+          <div className="common-info__title--line h2-fluid theme-contrast">
+            <span>03</span>
+          </div>
+          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-03">
+            <span>Experience</span>
           </div>
         </div>
         <div className="common-info__content">

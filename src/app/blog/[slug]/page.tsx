@@ -22,9 +22,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <article className="blog-post layout-block">
       <div className="common-info">
-        <div className="common-info__title">
-          <div className="common-info__title--line has-label">
-            <span>04 — Blog</span>
+        <div className="common-info__title" role="heading" aria-level={2}>
+          <div className="common-info__title--line h2-fluid theme-contrast">
+            <span>04</span>
+          </div>
+          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-04">
+            <span>Blog</span>
           </div>
         </div>
         <div className="common-info__content">

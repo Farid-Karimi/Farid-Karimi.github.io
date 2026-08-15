@@ -2,13 +2,13 @@ interface ArrowIconProps {
   className?: string;
   flip?: boolean;
   variant?: "diagonal" | "external" | "horizontal";
-  tone?: "black" | "contrast";
+  tone?: "black" | "contrast" | "current";
 }
 
 export default function ArrowIcon({ className, flip, variant = "diagonal", tone = "black" }: ArrowIconProps) {
   const classes = ["ui-icon", className].filter(Boolean).join(" ");
   const style = flip ? { transform: "scaleX(-1)" } : undefined;
-  const fill = tone === "contrast" ? "var(--theme-contrast)" : "var(--black)";
+  const fill = tone === "contrast" ? "var(--theme-contrast)" : tone === "current" ? "currentColor" : "var(--black)";
 
   if (variant === "external") {
     return (

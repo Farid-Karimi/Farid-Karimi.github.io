@@ -5,9 +5,12 @@ export default function AboutSection() {
   return (
     <section id="about" className="home-about layout-block">
       <div className="common-info">
-        <div className="common-info__title">
-          <div className="common-info__title--line has-label">
-            <span>01 — About</span>
+        <div className="common-info__title" role="heading" aria-level={2}>
+          <div className="common-info__title--line h2-fluid theme-contrast">
+            <span>01</span>
+          </div>
+          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-01">
+            <span>About</span>
           </div>
         </div>
         <div className="common-info__content">

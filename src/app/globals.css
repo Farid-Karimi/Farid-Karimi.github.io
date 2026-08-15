@@ -1254,8 +1254,9 @@ button {
 .common-info__title--line.has-label:before {
   content: attr(data-section);
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
   color: var(--grey-300);
   text-transform: uppercase;
   font-family: "NON Natural Mono", monospace;
@@ -1475,8 +1476,9 @@ button {
 .common-info__title--line.has-label:before {
   content: attr(data-section);
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
   color: var(--grey-300);
   text-transform: uppercase;
   font-family: NON Natural Mono, monospace;
@@ -1707,44 +1709,65 @@ button {
   margin-top: var(--spacer-24);
 }
 
-.home-projects__nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 36px;
-  height: 36px;
-  border: none;
+.home-projects__pagination {
+  margin-top: var(--spacer-48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacer-16);
+}
+
+.home-projects__pag-cta {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(242, 242, 242, 0.06);
   background-color: transparent;
-  color: var(--grey-300);
+  color: var(--theme-contrast);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: color 0.35s var(--ease-out-cubic);
+  transition:
+    background-color 0.35s var(--ease-out-cubic),
+    color 0.35s var(--ease-out-cubic),
+    border-color 0.35s var(--ease-out-cubic);
 }
 
-.home-projects__nav-btn.prev {
-  left: 12px;
-}
-
-.home-projects__nav-btn.next {
-  right: 12px;
-}
-
-.home-projects__nav-btn.prev .ui-icon {
-  transform: rotate(180deg);
-}
-
-.home-projects__nav-btn .ui-icon {
+.home-projects__pag-cta .ui-icon {
   width: 12px;
   height: auto;
   display: flex;
 }
 
+.home-projects__pag-dots {
+  display: flex;
+  gap: var(--spacer-8);
+}
+
+.home-projects__pag-dot {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--theme-contrast);
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.35s var(--ease-out-cubic);
+}
+
+.home-projects__pag-dot.active {
+  background-color: var(--theme-contrast);
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .home-projects__nav-btn:hover {
-    color: var(--theme-contrast);
+  .home-projects__pag-cta:hover {
+    background-color: var(--theme-contrast);
+    border-color: var(--theme-contrast);
+    color: var(--black);
+  }
+
+  .home-projects__pag-dot:hover:not(.active) {
+    background-color: var(--theme-contrast);
   }
 }
 

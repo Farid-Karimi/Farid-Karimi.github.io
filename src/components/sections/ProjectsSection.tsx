@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { projects } from "@/data/content";
 import type { Project } from "@/data/content";
@@ -14,15 +14,49 @@ function cardStep(track: HTMLDivElement): number {
   return card.offsetWidth + 4;
 }
 
+function stopCountOf(track: HTMLDivElement): number {
+  const s = cardStep(track);
+  if (s <= 0) return 1;
+  const maxScroll = track.scrollWidth - track.clientWidth;
+  return Math.max(1, Math.min(projects.length, Math.round(maxScroll / s) + 1));
+}
+
 export default function ProjectsSection() {
   const [active, setActive] = useState<Project | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [stopCount, setStopCount] = useState(1);
   const revealRef = useReveal<HTMLDivElement>(".project-card");
   const trackRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<{ startX: number; startLeft: number; moved: boolean } | null>(null);
 
+  useEffect(() => {
+    const measure = () => {
+      const track = trackRef.current;
+      if (track) setStopCount(stopCountOf(track));
+    };
+    measure();
+    if (typeof ResizeObserver === "undefined") {
+      window.addEventListener("resize", measure);
+      return () => window.removeEventListener("resize", measure);
+    }
+    const ro = new ResizeObserver(measure);
+    if (trackRef.current) ro.observe(trackRef.current);
+    return () => ro.disconnect();
+  }, []);
+
   const combinedRef = (el: HTMLDivElement | null) => {
     trackRef.current = el;
     revealRef.current = el;
+  };
+
+  const onScroll = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const s = cardStep(track);
+    if (s <= 0) return;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const idx = track.scrollLeft >= maxScroll - 2 ? stopCount - 1 : Math.round(track.scrollLeft / s);
+    setActiveIndex(Math.min(stopCount - 1, Math.max(0, idx)));
   };
 
   const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
@@ -65,6 +99,14 @@ export default function ProjectsSection() {
     }
   };
 
+  const jumpTo = (i: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const s = cardStep(track);
+    if (s <= 0) return;
+    track.scrollTo({ left: i * s, behavior: "smooth" });
+  };
+
   const onCardClick = (e: React.MouseEvent, project: Project) => {
     if (dragRef.current?.moved) {
       e.preventDefault();
@@ -76,9 +118,12 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="home-projects layout-block">
       <div className="common-info">
-        <div className="common-info__title">
-          <div className="common-info__title--line has-label">
-            <span>02 — Projects</span>
+        <div className="common-info__title" role="heading" aria-level={2}>
+          <div className="common-info__title--line h2-fluid theme-contrast">
+            <span>02</span>
+          </div>
+          <div className="common-info__title--line has-label h2-fluid" data-section="Sec-02">
+            <span>Projects</span>
           </div>
         </div>
         <div className="common-info__content">
@@ -91,6 +136,7 @@ export default function ProjectsSection() {
             <div
               className="home-projects__grid"
               ref={combinedRef}
+              onScroll={onScroll}
               onPointerDown={onPointerDown}
               onPointerMove={onPointerMove}
               onPointerUp={onPointerUp}
@@ -121,20 +167,32 @@ export default function ProjectsSection() {
                 </button>
               ))}
             </div>
-            <button
-              className="home-projects__nav-btn prev"
-              onClick={() => step(-1)}
-              aria-label="Previous projects"
-            >
-              <ArrowIcon />
-            </button>
-            <button
-              className="home-projects__nav-btn next"
-              onClick={() => step(1)}
-              aria-label="Next projects"
-            >
-              <ArrowIcon />
-            </button>
+            <div className="home-projects__pagination">
+              <button
+                className="home-projects__pag-cta"
+                onClick={() => step(-1)}
+                aria-label="Previous projects"
+              >
+                <ArrowIcon flip tone="current" />
+              </button>
+              <div className="home-projects__pag-dots">
+                {Array.from({ length: stopCount }, (_, i) => (
+                  <button
+                    key={i}
+                    className={`home-projects__pag-dot${i === activeIndex ? " active" : ""}`}
+                    onClick={() => jumpTo(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+              <button
+                className="home-projects__pag-cta"
+                onClick={() => step(1)}
+                aria-label="Next projects"
+              >
+                <ArrowIcon tone="current" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
