@@ -1703,17 +1703,14 @@ button {
   z-index: 2;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--grey-200);
-  border-radius: 50%;
-  background-color: rgba(9, 9, 9, 0.55);
-  backdrop-filter: blur(12px) saturate(1.4);
-  color: var(--theme-fg);
+  border: none;
+  background-color: transparent;
+  color: var(--grey-300);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.35s var(--ease-out-cubic), color 0.35s var(--ease-out-cubic),
-    border-color 0.35s var(--ease-out-cubic);
+  transition: color 0.35s var(--ease-out-cubic);
 }
 
 .home-projects__nav-btn.prev {
@@ -1736,9 +1733,7 @@ button {
 
 @media (hover: hover) and (pointer: fine) {
   .home-projects__nav-btn:hover {
-    background-color: var(--theme-contrast);
-    border-color: var(--theme-contrast);
-    color: var(--black);
+    color: var(--theme-contrast);
   }
 }
 
