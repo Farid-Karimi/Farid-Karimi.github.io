@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { careers } from "@/data/careers";
 import type { CareerCard } from "@/data/careers";
-import ArrowIcon from "./ArrowIcon";
-import CommonInfo from "./CommonInfo";
+import ArrowIcon from "../ArrowIcon";
+import CommonInfo from "../CommonInfo";
 
 function Glyph({ id }: { id: string }) {
   if (id === "blossom") {
