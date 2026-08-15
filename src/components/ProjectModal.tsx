@@ -15,9 +15,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKey);
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", onKey);
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
     };
   }, [onClose]);

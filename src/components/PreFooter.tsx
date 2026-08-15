@@ -1,7 +1,12 @@
-import { FOOTER_BLURB, FOOTER_COPYRIGHT, FOOTER_SECTIONS } from "@/data/site";
+"use client";
+
+import { usePathname } from "next/navigation";
+import { FOOTER_BLURB, FOOTER_COPYRIGHT, FOOTER_SECTIONS, resolveHref } from "@/data/site";
 import ArrowIcon from "./ArrowIcon";
 
 export default function PreFooter() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   return (
     <section className="site-pre-footer">
       <span />
@@ -20,7 +25,7 @@ export default function PreFooter() {
                 <div className="table--cell" key={item.label}>
                   <a
                     className="a-div"
-                    href={item.href}
+                    href={resolveHref(item.href, item.type, isHome)}
                     {...(item.type === "external"
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}

@@ -1930,7 +1930,7 @@ button {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
+  gap: var(--spacer-8);
 }
 
 .common-modal-metrics__item {
@@ -1939,12 +1939,12 @@ button {
   border: 1px solid var(--grey-200);
   display: flex;
   flex-direction: column;
-  gap: var(--spacer-4);
+  gap: var(--spacer-8);
 }
 
 .common-modal-metrics__item .display {
   font-size: clamp(28px, max(28px + 0vw, min(16px + 1.5vw, 44px)), 44px);
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .common-modal-metrics__item .label {

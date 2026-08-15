@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { NAV_FOOTER_LINKS, NAV_ITEMS } from "@/data/site";
+import { NAV_FOOTER_LINKS, NAV_ITEMS, resolveHref } from "@/data/site";
 import ArrowIcon from "./ArrowIcon";
 import ThemeSwitcher from "./ThemeSwitcher";
 
@@ -13,9 +13,6 @@ export default function SiteNav() {
 
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
-
-  const hrefFor = (item: (typeof NAV_ITEMS)[number]) =>
-    item.type === "anchor" && !isHome ? `/${item.href}` : item.href;
 
   return (
     <nav className={`site-nav${open ? " open" : ""}`}>
@@ -58,7 +55,7 @@ export default function SiteNav() {
             >
               <a
                 className="a-div"
-                href={hrefFor(item)}
+                href={resolveHref(item.href, item.type, isHome)}
                 data-index={item.number}
                 onClick={close}
                 aria-label={item.ariaLabel ?? undefined}

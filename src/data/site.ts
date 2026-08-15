@@ -124,8 +124,8 @@ export const FOOTER_SECTIONS: FooterSection[] = [
     items: NAV_ITEMS.map((item) => ({
       label: item.label,
       href: item.href,
-      type: "anchor" as const,
-      noNewTab: true,
+      type: item.type,
+      noNewTab: item.noNewTab,
     })),
   },
   {
@@ -155,3 +155,11 @@ export const FOOTER_BLURB = {
 };
 
 export const SITE = site;
+
+export function resolveHref(
+  href: string,
+  type: "anchor" | "internal" | "external",
+  isHome: boolean
+): string {
+  return type === "anchor" && !isHome ? `/${href}` : href;
+}
