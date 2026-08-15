@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { ReactLenis } from "lenis/react";
 import "./globals.css";
+import PreFooter from "@/components/PreFooter";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+import SiteNav from "@/components/SiteNav";
 
 export const metadata: Metadata = {
   title: "Dragonfly",
@@ -10,10 +15,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <div id="site" className="theme-orange">
-          {children}
-        </div>
+      <body className="is-disabled">
+        <ReactLenis root options={{ anchors: true }}>
+          <div id="site" className="theme-orange">
+            <SiteHeader />
+            <SiteNav />
+            {children}
+            <PreFooter />
+            <SiteFooter />
+          </div>
+        </ReactLenis>
       </body>
     </html>
   );
