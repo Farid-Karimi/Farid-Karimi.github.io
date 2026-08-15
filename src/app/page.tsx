@@ -1,4 +1,5 @@
 import AboutSection from "@/components/sections/AboutSection";
+import CareersSection from "@/components/sections/CareersSection";
 import LargeTextSection from "@/components/sections/LargeTextSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 import TeamSection from "@/components/sections/TeamSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <WritingSection />
       <TeamSection />
       <PortfolioSection />
+      <CareersSection />
     </main>
   );
 }
