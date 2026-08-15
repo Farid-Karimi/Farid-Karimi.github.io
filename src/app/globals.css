@@ -2354,6 +2354,10 @@ button {
   transition: color 0.35s var(--ease-out-cubic);
 }
 
+.blog-section__more .label {
+  transform: translateY(2.5px);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .blog-section__more:hover {
     color: var(--theme-contrast);
