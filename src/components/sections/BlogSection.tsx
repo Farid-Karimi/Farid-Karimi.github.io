@@ -53,12 +53,11 @@ export default function BlogSection() {
           </div>
           <div className="layout-grid">
             <div className="info">
-              <Link
-                href="/blog"
-                className="home-projects__pag-cta blog-section__more"
-                aria-label="All posts"
-              >
-                <ArrowIcon tone="current" />
+              <Link href="/blog" className="blog-section__more" aria-label="All posts">
+                <span className="label">All posts</span>
+                <span className="home-projects__pag-cta">
+                  <ArrowIcon tone="current" />
+                </span>
               </Link>
             </div>
           </div>
