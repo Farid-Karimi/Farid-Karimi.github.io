@@ -1,3 +1,5 @@
+import { site } from "./content";
+
 export type Theme = "orange" | "pink" | "purple";
 
 export interface Media {
@@ -49,14 +51,6 @@ export interface FooterSection {
 export const NAV_ITEMS: NavItem[] = [
   {
     number: "01",
-    label: "Home",
-    href: "#home",
-    type: "anchor",
-    noNewTab: true,
-    ariaLabel: "Home Section",
-  },
-  {
-    number: "02",
     label: "About",
     href: "#about",
     type: "anchor",
@@ -64,116 +58,100 @@ export const NAV_ITEMS: NavItem[] = [
     ariaLabel: "About Section",
   },
   {
-    number: "03",
-    label: "Writing",
-    href: "#writing",
+    number: "02",
+    label: "Projects",
+    href: "#projects",
     type: "anchor",
     noNewTab: true,
-    ariaLabel: "Writing Section",
+    ariaLabel: "Projects Section",
+  },
+  {
+    number: "03",
+    label: "Experience",
+    href: "#experience",
+    type: "anchor",
+    noNewTab: true,
+    ariaLabel: "Experience Section",
   },
   {
     number: "04",
-    label: "Team",
-    href: "#team",
+    label: "Blog",
+    href: "#blog",
     type: "anchor",
     noNewTab: true,
-    ariaLabel: "Team Section",
+    ariaLabel: "Blog Section",
   },
   {
     number: "05",
-    label: "Portfolio",
-    href: "#portfolio",
-    type: "anchor",
-    noNewTab: true,
-    ariaLabel: "Portfolio Section",
-  },
-  {
-    number: "06",
-    label: "Careers",
-    href: "#careers",
-    type: "anchor",
-    noNewTab: true,
-    ariaLabel: "Careers Section",
-  },
-  {
-    number: "07",
     label: "Contact",
-    href: "/contact",
-    type: "internal",
+    href: "#contact",
+    type: "anchor",
     noNewTab: true,
-    ariaLabel: "Contact Page",
+    ariaLabel: "Contact Section",
   },
 ];
 
-export const NAV_LEGAL_LINKS: FooterLink[] = [
+export const NAV_FOOTER_LINKS: FooterLink[] = [
   {
-    label: "Terms",
-    href: "/legal/terms",
-    type: "internal",
-    noNewTab: true,
+    label: "GitHub",
+    href: site.github,
+    type: "external",
+    noNewTab: false,
   },
   {
-    label: "Disclosures",
-    href: "/legal/disclosures",
-    type: "internal",
-    noNewTab: true,
+    label: "LinkedIn",
+    href: site.linkedin,
+    type: "external",
+    noNewTab: false,
+  },
+  {
+    label: "Email",
+    href: `mailto:${site.email}`,
+    type: "external",
+    noNewTab: false,
+  },
+  {
+    label: "Telegram",
+    href: site.telegram,
+    type: "external",
+    noNewTab: false,
   },
 ];
 
 export const FOOTER_SECTIONS: FooterSection[] = [
   {
     label: "Sections",
-    items: [
-      { label: "Home", href: "#home", type: "anchor", noNewTab: true },
-      { label: "About", href: "#about", type: "anchor", noNewTab: true },
-      { label: "Writing", href: "#writing", type: "anchor", noNewTab: true },
-      { label: "Team", href: "#team", type: "anchor", noNewTab: true },
-      { label: "Portfolio", href: "#portfolio", type: "anchor", noNewTab: true },
-      { label: "Careers", href: "#careers", type: "anchor", noNewTab: true },
-    ],
+    items: NAV_ITEMS.map((item) => ({
+      label: item.label,
+      href: item.href,
+      type: "anchor" as const,
+      noNewTab: true,
+    })),
   },
   {
     label: "Connect",
     items: [
-      { label: "Contact", href: "/contact", type: "internal", noNewTab: true },
-      {
-        label: "X",
-        href: "https://x.com/dragonfly_xyz",
-        type: "external",
-        noNewTab: false,
-      },
-      {
-        label: "LinkedIn",
-        href: "https://www.linkedin.com/company/dragonfly-capital-partners/",
-        type: "external",
-        noNewTab: false,
-      },
-      {
-        label: "Press Kit",
-        href: "https://brand.dragonfly.xyz/",
-        type: "external",
-        noNewTab: false,
-      },
+      { label: "GitHub", href: site.github, type: "external", noNewTab: false },
+      { label: "LinkedIn", href: site.linkedin, type: "external", noNewTab: false },
+      { label: "Email", href: `mailto:${site.email}`, type: "external", noNewTab: false },
+      { label: "Telegram", href: site.telegram, type: "external", noNewTab: false },
     ],
   },
   {
-    label: "Legal",
+    label: "Elsewhere",
     items: [
-      { label: "Terms", href: "/legal/terms", type: "internal", noNewTab: true },
-      {
-        label: "Disclosures",
-        href: "/legal/disclosures",
-        type: "internal",
-        noNewTab: true,
-      },
+      { label: "Blog", href: "#blog", type: "anchor", noNewTab: true },
+      { label: "GitHub Pages", href: site.githubPages, type: "external", noNewTab: false },
     ],
   },
 ];
 
+export const FOOTER_COPYRIGHT = `Ⓒ ${site.name} 2026`;
+
 export const FOOTER_BLURB = {
-  label: "Info",
+  label: "FARID KARIMI.",
   blurb:
-    "Dragonfly is a leading crypto investment fund. We back the best researchers and builders who will push the entire crypto ecosystem forward.",
+    "From raw data to deployed systems — recommenders, LLM agents, and bioinformatics pipelines. Currently finishing my B.Sc. at Shahid Beheshti University.",
 };
 
-export const FOOTER_COPYRIGHT = "Ⓒ Dragonfly Capital 2026";
+export const SITE = site;

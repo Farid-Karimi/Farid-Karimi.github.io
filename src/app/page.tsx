@@ -1,21 +1,21 @@
 import AboutSection from "@/components/sections/AboutSection";
-import CareersSection from "@/components/sections/CareersSection";
-import LargeTextSection from "@/components/sections/LargeTextSection";
-import PortfolioSection from "@/components/sections/PortfolioSection";
-import TeamSection from "@/components/sections/TeamSection";
-import WritingSection from "@/components/sections/WritingSection";
+import BlogSection from "@/components/sections/BlogSection";
+import ContactSection from "@/components/sections/ContactSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import MarqueeSection from "@/components/sections/MarqueeSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 import HomeHero from "@/components/HomeHero";
 
 export default function Home() {
   return (
     <main className="index layout-block">
       <HomeHero />
+      <MarqueeSection />
       <AboutSection />
-      <LargeTextSection />
-      <WritingSection />
-      <TeamSection />
-      <PortfolioSection />
-      <CareersSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <BlogSection />
+      <ContactSection />
     </main>
   );
 }

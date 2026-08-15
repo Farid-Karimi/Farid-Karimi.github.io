@@ -22,12 +22,12 @@ export default function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer__content layout-block">
-        <span className="h2-alt letter-l default animate">
-          <span>L</span>
+        <span className="h2-alt letter-f default animate">
+          <span>F</span>
         </span>
         <ArrowIcon variant="horizontal" />
-        <span className="h2-alt letter-y default animate">
-          <span>Y</span>
+        <span className="h2-alt letter-k default animate">
+          <span>K</span>
         </span>
       </div>
       <div className="site-footer__overlay">

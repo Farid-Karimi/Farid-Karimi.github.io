@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { NAV_ITEMS, NAV_LEGAL_LINKS } from "@/data/site";
+import { NAV_FOOTER_LINKS, NAV_ITEMS } from "@/data/site";
 import ArrowIcon from "./ArrowIcon";
 import ThemeSwitcher from "./ThemeSwitcher";
 import UiLogo from "./UiLogo";
@@ -14,7 +14,7 @@ export default function SiteNav() {
 
   return (
     <nav className={`site-nav${open ? " open" : ""}`}>
-      <div className={`site-nav__main${open ? " active" : ""}`} onClick={toggle}>
+      <div className={`site-nav__main${open ? " active" : ""}`} onClick={toggle} role="button" aria-expanded={open}>
         <div>
           <UiLogo />
         </div>
@@ -49,7 +49,7 @@ export default function SiteNav() {
               key={`${item.number}-${item.label}`}
               className="navigation-item"
               role="menuitem"
-              style={{ transitionDelay: open ? `${i * 70}ms` : "0ms" }}
+              style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
             >
               <a
                 className="a-div"
@@ -64,19 +64,25 @@ export default function SiteNav() {
             </li>
           ))}
         </ul>
-        <div className="site-nav__ascii navigation-item" style={{ transitionDelay: open ? "560ms" : "0ms" }}>
-          <div id="clouds" />
-        </div>
-        <div className="site-nav__footer navigation-item" style={{ transitionDelay: open ? "630ms" : "0ms" }}>
+        <div className="site-nav__footer navigation-item" style={{ transitionDelay: open ? "360ms" : "0ms" }}>
           <div className="site-nav__footer--links">
-            {NAV_LEGAL_LINKS.map((link) => (
-              <a key={link.label} className="a-div" href={link.href} onClick={close}>
+            {NAV_FOOTER_LINKS.map((link) => (
+              <a
+                key={link.label}
+                className="a-div"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={close}
+              >
                 <span className="label">{link.label}</span>
               </a>
             ))}
           </div>
         </div>
-        <ThemeSwitcher />
+        <div className="navigation-item site-nav__themes-wrap" style={{ transitionDelay: open ? "430ms" : "0ms" }}>
+          <ThemeSwitcher />
+        </div>
       </div>
     </nav>
   );

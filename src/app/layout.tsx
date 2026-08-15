@@ -7,9 +7,9 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteNav from "@/components/SiteNav";
 
 export const metadata: Metadata = {
-  title: "Dragonfly",
+  title: "Farid Karimi — ML Systems & Bioinformatics",
   description:
-    "Dragonfly is a leading crypto investment fund. We back the best researchers and builders who will push the entire crypto ecosystem forward.",
+    "ML systems end-to-end — recommenders, LLM agents, bioinformatics pipelines. CS @ Shahid Beheshti University, B.Sc. 2026.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

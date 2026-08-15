@@ -1,28 +1,30 @@
-import { about } from "@/data/about";
-import CommonInfo from "../CommonInfo";
+import { about } from "@/data/content";
+import StatsSection from "./StatsSection";
 
 export default function AboutSection() {
-  const first = about.info?.[0];
-  const second = about.info?.[1];
-
   return (
     <section id="about" className="home-about layout-block">
-      <CommonInfo
-        prefix={about.titlePrefix}
-        title={about.titleEn}
-        sectionName={about.sectionName ?? undefined}
-      />
-      <div className={`common-info__content${about.indent ? " indent" : ""}`}>
-        <div className="layout-grid">
-          <div className="info p-large-fluid">{first?.description}</div>
+      <div className="common-info">
+        <div className="common-info__title">
+          <div className="common-info__title--line has-label">
+            <span>01 — About</span>
+          </div>
         </div>
-        <div className="layout-grid">
-          <div className="label" data-title={second?.title}>
-            {second?.title}
+        <div className="common-info__content">
+          <div className="layout-grid">
+            <div className="info">
+              <h2 className="display">{about.hook}</h2>
+            </div>
           </div>
-          <div aria-label={second?.title ?? undefined} className="info p-large-fluid" data-title={second?.title}>
-            {second?.description}
+          <div className="layout-grid">
+            {about.paragraphs.map((paragraph, i) => (
+              <div className="info" key={i}>
+                <div className="label">{i === 0 ? "Bio" : "Teaching"}</div>
+                <p className="p description-text">{paragraph}</p>
+              </div>
+            ))}
           </div>
+          <StatsSection />
         </div>
       </div>
     </section>

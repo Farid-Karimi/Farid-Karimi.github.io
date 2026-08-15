@@ -5,19 +5,13 @@ export default function SiteHeader() {
     <header className="site-header">
       <div className="site-header__content layout-block">
         <a className="a-div animate" href="/">
-          <span className="h2-alt letter-d default">D</span>
-          <span className="h2-alt letter-f extra">
-            <span>F</span>
-          </span>
-          <span className="h2-alt letter-l extra">
-            <span>L</span>
-          </span>
-          <span className="h2-alt letter-y extra">
-            <span>Y</span>
+          <span className="h2-alt letter-f default">F</span>
+          <span className="h2-alt letter-k extra">
+            <span>K</span>
           </span>
         </a>
-        <span className="h2-alt letter-f default animate">
-          <span>F</span>
+        <span className="h2-alt letter-k default animate">
+          <span>K</span>
         </span>
       </div>
       <div className="site-header__overlay">
