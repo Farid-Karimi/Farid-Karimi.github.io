@@ -751,6 +751,12 @@ button {
   text-transform: uppercase;
 }
 
+.site-nav__main > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .site-nav__main > div:nth-child(2) {
   display: flex;
   align-items: center;
