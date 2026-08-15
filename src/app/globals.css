@@ -1664,6 +1664,7 @@ button {
 
 .home-stats__item .display {
   font-size: clamp(48px, max(48px + 0vw, min(24px + 3.125vw, 88px)), 88px);
+  letter-spacing: -0.04em;
 }
 
 .home-stats__item .label {
@@ -1945,6 +1946,7 @@ button {
 .common-modal-metrics__item .display {
   font-size: clamp(28px, max(28px + 0vw, min(16px + 1.5vw, 44px)), 44px);
   line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
 .common-modal-metrics__item .label {
