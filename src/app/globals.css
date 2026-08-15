@@ -274,12 +274,8 @@ h1 {
   .display,
   .h1,
   h1 {
-    font-size: clamp(
-      130px,
-      max(37.5px + 11.5625vw, min(-24px + 15.8333333333vw, 280px)),
-      280px
-    );
-    letter-spacing: -12.24px;
+    font-size: clamp(104px, max(74px + 3.75vw, min(-16px + 10vw, 176px)), 176px);
+    letter-spacing: -0.045em;
   }
 }
 
