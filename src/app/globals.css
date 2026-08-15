@@ -1894,8 +1894,35 @@ button {
   cursor: default;
 }
 
+@media (min-width: 800px) {
+  .modal-content.project {
+    width: min(680px, calc(100% - var(--spacer-48)));
+  }
+}
+
 .modal-content.project #wrapper {
   overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  overscroll-behavior: contain;
+}
+
+.modal-content.project #wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content.project #wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-content.project #wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content.project #wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .common-modal-metrics {
@@ -2135,63 +2162,45 @@ button {
 }
 
 .home-contact__channels {
-  grid-template-columns: 1fr;
-  grid-auto-rows: 1fr;
-  gap: var(--spacer-4);
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.contact-card {
+.contact-item {
   position: relative;
-  padding: var(--spacer-12);
-  border: 1px solid var(--grey-200);
+  flex: 1;
+  padding: var(--spacer-16) 0;
+  border-top: 1px solid var(--grey-200);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--spacer-12);
+  justify-content: center;
+  gap: var(--spacer-4);
   opacity: 0;
   transform: translateY(10%);
-  transition: background-color 0.35s var(--ease-out-cubic), color 0.35s var(--ease-out-cubic),
-    opacity 0.85s var(--ease-out-cubic), transform 0.85s var(--ease-out-cubic);
+  transition: color 0.35s var(--ease-out-cubic), opacity 0.85s var(--ease-out-cubic),
+    transform 0.85s var(--ease-out-cubic);
 }
 
-.contact-card.is-inview {
+.contact-item.is-inview {
   opacity: 1;
   transform: translateY(0);
 }
 
-.contact-card__top {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.contact-card__top .label {
+.contact-item .label {
   color: var(--grey-300);
   transition: color 0.35s var(--ease-out-cubic);
 }
 
-.contact-card__top .ui-icon {
-  width: 10px;
-  height: auto;
-  color: var(--grey-300);
-  transition: color 0.35s var(--ease-out-cubic);
-}
-
-.contact-card__note {
+.contact-item__note {
   text-align: left;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .contact-card:hover {
-    background-color: var(--theme-contrast);
-    color: var(--black);
-  }
-  .contact-card:hover .contact-card__top .label,
-  .contact-card:hover .contact-card__top .ui-icon {
-    color: var(--black);
+  .contact-item:hover .label {
+    color: var(--theme-contrast);
   }
 }
 
@@ -2253,29 +2262,22 @@ button {
 
 .home-contact__form--fields .cta {
   position: relative;
-  width: max-content;
-  height: 40px;
-  padding: var(--spacer-12) 0;
+  width: 100%;
+  padding: var(--spacer-12);
+  border: 1px solid var(--grey-200);
   display: flex;
   align-items: center;
-  gap: var(--spacer-8);
+  justify-content: center;
   cursor: pointer;
-  transition: color 0.35s var(--ease-out-cubic);
-}
-
-.home-contact__form--fields .cta .ui-icon {
-  width: 14px;
-  height: auto;
-  transform: translate(-4px);
-  transition: transform 0.35s var(--ease-in-out-sine);
+  transition: background-color 0.35s var(--ease-out-cubic), color 0.35s var(--ease-out-cubic),
+    border-color 0.35s var(--ease-out-cubic);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .home-contact__form--fields .cta:hover {
+    background-color: var(--theme-contrast);
+    border-color: var(--theme-contrast);
     color: var(--black);
-  }
-  .home-contact__form--fields .cta:hover .ui-icon {
-    transform: translate(0);
   }
 }
 
@@ -2328,6 +2330,10 @@ button {
 .blog-page,
 .blog-post {
   min-height: 100dvh;
+}
+
+.blog-post .layout-grid .info {
+  grid-column: -1/1;
 }
 
 .blog-post__back {

@@ -9,7 +9,7 @@ import { useReveal } from "@/hooks/useReveal";
 const FORMSPREE = site.formspree;
 
 export default function ContactSection() {
-  const listRef = useReveal<HTMLDivElement>(".contact-card");
+  const listRef = useReveal<HTMLDivElement>(".contact-item");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
   const [sending, setSending] = useState(false);
@@ -57,23 +57,18 @@ export default function ContactSection() {
           </div>
           <div className="home-contact__split">
             <div className="home-contact__left">
-              <div className="home-contact__channels layout-grid" ref={listRef}>
+              <div className="home-contact__channels" ref={listRef}>
                 {contactChannels.map((channel, i) => (
                   <a
-                    className="contact-card a-div"
+                    className="contact-item a-div"
                     style={{ transitionDelay: `${i * 100}ms` }}
                     key={channel.label}
                     href={channel.href}
                     target={channel.href.startsWith("mailto:") ? undefined : "_blank"}
                     rel="noopener noreferrer"
                   >
-                    <span className="contact-card__top">
-                      <span className="label">{channel.label}</span>
-                      <span className="ui-icon">
-                        <ArrowIcon />
-                      </span>
-                    </span>
-                    <span className="contact-card__note h3">{channel.note}</span>
+                    <span className="label">{channel.label}</span>
+                    <span className="contact-item__note h3">{channel.note}</span>
                   </a>
                 ))}
               </div>
@@ -104,9 +99,8 @@ export default function ContactSection() {
                     <textarea name="message" rows={5} required />
                   </label>
 <button className="a-div cta" type="submit" disabled={sending}>
-                  <span className="label">{sending ? "Sending…" : "Send message"}</span>
-                  <ArrowIcon variant="horizontal" />
-                </button>
+                    <span className="label">{sending ? "Sending…" : "Send message"}</span>
+                  </button>
                   {error ? <p className="p">Something went wrong — try email instead.</p> : null}
                 </form>
               )}

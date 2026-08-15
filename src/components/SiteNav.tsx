@@ -1,15 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { NAV_FOOTER_LINKS, NAV_ITEMS } from "@/data/site";
 import ArrowIcon from "./ArrowIcon";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
+
+  const hrefFor = (item: (typeof NAV_ITEMS)[number]) =>
+    item.type === "anchor" && !isHome ? `/${item.href}` : item.href;
 
   return (
     <nav className={`site-nav${open ? " open" : ""}`}>
@@ -52,7 +58,7 @@ export default function SiteNav() {
             >
               <a
                 className="a-div"
-                href={item.href}
+                href={hrefFor(item)}
                 data-index={item.number}
                 onClick={close}
                 aria-label={item.ariaLabel ?? undefined}
