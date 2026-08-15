@@ -57,7 +57,6 @@ export default function ContactSection() {
           </div>
           <div className="home-contact__split">
             <div className="home-contact__left">
-              <p className="p description-text">Find me here — or drop a message in the form.</p>
               <div className="home-contact__channels layout-grid" ref={listRef}>
                 {contactChannels.map((channel, i) => (
                   <a
