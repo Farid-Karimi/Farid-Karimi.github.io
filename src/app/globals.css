@@ -1724,7 +1724,7 @@ button {
   right: 12px;
 }
 
-.home-projects__nav-btn:first-child .ui-icon {
+.home-projects__nav-btn.prev .ui-icon {
   transform: rotate(180deg);
 }
 
