@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { NAV_FOOTER_LINKS, NAV_ITEMS, resolveHref } from "@/data/site";
 import ArrowIcon from "./ArrowIcon";
 import ThemeSwitcher from "./ThemeSwitcher";
+
+const CLOSED_DOTS = ["4px, 0px", "10px, 0px", "16px, 0px", "22px, 0px", "28px, 0px"];
+const OPEN_DOTS = ["10px, -6px", "10px, 6px", "16px, 0px", "22px, -6px", "22px, 6px"];
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -14,6 +17,22 @@ export default function SiteNav() {
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
 
+  useEffect(() => {
+    const dots = document.querySelectorAll<SVGRectElement>(".nav-dot");
+    const targets = open ? OPEN_DOTS : CLOSED_DOTS;
+    dots.forEach((dot, i) => {
+      dot.animate(
+        [{ transform: `translate(${targets[i]})` }],
+        {
+          duration: 400,
+          delay: i * 15,
+          easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+          fill: "forwards",
+        }
+      );
+    });
+  }, [open]);
+
   return (
     <nav className={`site-nav${open ? " open" : ""}`}>
       <div className={`site-nav__main${open ? " active" : ""}`} onClick={toggle} role="button" aria-expanded={open}>
@@ -21,22 +40,13 @@ export default function SiteNav() {
           <span className="site-nav__logo">FK</span>
         </div>
         <div>
-          <span className="ui-icon ham">
-            <svg width="28" height="4" viewBox="0 0 28 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" width="4" height="4" transform="rotate(90 4 0)" fill="var(--theme-contrast)" />
-              <rect x="10" width="4" height="4" transform="rotate(90 10 0)" fill="var(--theme-contrast)" />
-              <rect x="16" width="4" height="4" transform="rotate(90 16 0)" fill="var(--theme-contrast)" />
-              <rect x="22" width="4" height="4" transform="rotate(90 22 0)" fill="var(--theme-contrast)" />
-              <rect x="28" width="4" height="4" transform="rotate(90 28 0)" fill="var(--theme-contrast)" />
-            </svg>
-          </span>
-          <span className="ui-icon close">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" width="4" height="4" transform="rotate(90 4 0)" fill="var(--theme-contrast)" />
-              <rect x="16" width="4" height="4" transform="rotate(90 16 0)" fill="var(--theme-contrast)" />
-              <rect x="16" y="12" width="4" height="4" transform="rotate(90 16 12)" fill="var(--theme-contrast)" />
-              <rect x="6" y="10" width="4" height="4" transform="rotate(-90 6 10)" fill="var(--theme-contrast)" />
-              <rect x="4" y="12" width="4" height="4" transform="rotate(90 4 12)" fill="var(--theme-contrast)" />
+          <span className="ui-icon nav-toggle">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect className="nav-dot" x="0" y="6" width="4" height="4" fill="var(--theme-contrast)" />
+              <rect className="nav-dot" x="0" y="6" width="4" height="4" fill="var(--theme-contrast)" />
+              <rect className="nav-dot" x="0" y="6" width="4" height="4" fill="var(--theme-contrast)" />
+              <rect className="nav-dot" x="0" y="6" width="4" height="4" fill="var(--theme-contrast)" />
+              <rect className="nav-dot" x="0" y="6" width="4" height="4" fill="var(--theme-contrast)" />
             </svg>
           </span>
         </div>

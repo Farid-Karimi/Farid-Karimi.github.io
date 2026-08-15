@@ -771,18 +771,27 @@ button {
 
 .site-nav__main .ui-icon {
   position: absolute;
-  transition: transform 0.35s var(--ease-in-out-sine),
-    opacity 0.15s var(--ease-in-out-sine);
   transform-origin: center center;
 }
 
-.site-nav__main .ui-icon.close,
-.site-nav__main.active .ui-icon.ham {
-  opacity: 0;
+.site-nav__main .nav-dot {
+  transform: translate(4px, 0);
 }
 
-.site-nav__main.active .ui-icon.close {
-  opacity: 1;
+.site-nav__main .nav-dot:nth-child(2) {
+  transform: translate(10px, 0);
+}
+
+.site-nav__main .nav-dot:nth-child(3) {
+  transform: translate(16px, 0);
+}
+
+.site-nav__main .nav-dot:nth-child(4) {
+  transform: translate(22px, 0);
+}
+
+.site-nav__main .nav-dot:nth-child(5) {
+  transform: translate(28px, 0);
 }
 
 .site-nav__menu {
