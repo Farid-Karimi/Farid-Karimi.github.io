@@ -76,10 +76,10 @@ export const NAV_ITEMS: NavItem[] = [
   {
     number: "04",
     label: "Blog",
-    href: "#blog",
-    type: "anchor",
+    href: "/blog",
+    type: "internal",
     noNewTab: true,
-    ariaLabel: "Blog Section",
+    ariaLabel: "Blog Page",
   },
   {
     number: "05",
@@ -140,7 +140,7 @@ export const FOOTER_SECTIONS: FooterSection[] = [
   {
     label: "Elsewhere",
     items: [
-      { label: "Blog", href: "#blog", type: "anchor", noNewTab: true },
+      { label: "Blog", href: "/blog", type: "internal", noNewTab: true },
       { label: "GitHub Pages", href: site.githubPages, type: "external", noNewTab: false },
     ],
   },

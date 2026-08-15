@@ -47,7 +47,9 @@ export default function ProjectsSection() {
     const track = trackRef.current;
     if (!track) return;
     dragRef.current = { startX: e.clientX, startLeft: track.scrollLeft, moved: false };
-    track.setPointerCapture(e.pointerId);
+    if (e.target instanceof Element) {
+      e.target.setPointerCapture(e.pointerId);
+    }
   };
 
   const onPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
@@ -60,7 +62,12 @@ export default function ProjectsSection() {
   };
 
   const onPointerUp = () => {
-    dragRef.current = null;
+    const drag = dragRef.current;
+    if (drag) {
+      window.setTimeout(() => {
+        if (dragRef.current === drag) dragRef.current = null;
+      }, 0);
+    }
   };
 
   const step = (dir: 1 | -1) => {

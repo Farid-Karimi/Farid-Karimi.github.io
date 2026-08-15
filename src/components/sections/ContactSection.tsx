@@ -103,10 +103,10 @@ export default function ContactSection() {
                     <span className="label">Message</span>
                     <textarea name="message" rows={5} required />
                   </label>
-                  <button className="a-div cta" type="submit" disabled={sending}>
-                    <span className="label">{sending ? "Sending…" : "Send message"}</span>
-                    <ArrowIcon />
-                  </button>
+<button className="a-div cta" type="submit" disabled={sending}>
+                  <span className="label">{sending ? "Sending…" : "Send message"}</span>
+                  <ArrowIcon variant="horizontal" />
+                </button>
                   {error ? <p className="p">Something went wrong — try email instead.</p> : null}
                 </form>
               )}

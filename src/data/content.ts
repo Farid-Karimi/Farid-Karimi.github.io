@@ -255,27 +255,6 @@ export interface BlogPost {
   body: string;
 }
 
-export const blog: BlogPost[] = [
-  {
-    slug: "recommender-pipelines",
-    title: "Retrieve, then rerank: a pragmatic recommender pipeline",
-    date: "2026-08-10",
-    tags: ["ml", "recommenders"],
-    excerpt:
-      "Why the best recommender I built wasn't one giant matrix factorization — it was a content-based retriever feeding a compact SVD reranker, and it hit an RMSE of 0.89.",
-    body: "Two-stage pipeline: content fingerprints (genres/metadata, cosine similarity, k=200 candidates) → SVD rerank (Surprise). Hit RMSE 0.89 on held-out ratings, index 15x smaller than raw matrix, under 1GB memory.",
-  },
-  {
-    slug: "hello-and-welcome",
-    title: "Hello, and welcome",
-    date: "2026-08-13",
-    tags: ["meta"],
-    excerpt:
-      "First post: what this blog is for, what I'm building, and what to expect here.",
-    body: "Blog for notes, post-mortems, and experiments from the projects page. Two rules: every post ends with the measured result, and nothing is evergreen — wrong posts get rewritten.",
-  },
-];
-
 export const contactChannels = [
   {
     label: "GitHub",

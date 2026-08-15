@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
-import ArrowIcon from "../ArrowIcon";
 
 function formatDate(iso: string): string {
   const [y, m, d] = iso.split("-");
@@ -8,11 +7,11 @@ function formatDate(iso: string): string {
   return `${months[Number(m) - 1]} ${Number(d)}, ${y}`;
 }
 
-export default function BlogSection() {
+export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <section id="blog" className="home-blog layout-block">
+    <section className="blog-page layout-block">
       <div className="common-info">
         <div className="common-info__title">
           <div className="common-info__title--line has-label">
@@ -22,7 +21,7 @@ export default function BlogSection() {
         <div className="common-info__content">
           <div className="layout-grid">
             <div className="info">
-              <h2 className="display">Notes &amp; post-mortems</h2>
+              <h1 className="display">Notes &amp; post-mortems</h1>
             </div>
           </div>
           <div className="common-thoughts-list__content">
@@ -34,9 +33,6 @@ export default function BlogSection() {
                 </div>
                 <div className="blog-item__row">
                   <p className="p description-text">{post.excerpt}</p>
-                  <span className="blog-item__arrow">
-                    <ArrowIcon />
-                  </span>
                 </div>
                 <div className="blog-item__tags">
                   {post.tags.map((tag) => (
@@ -47,14 +43,6 @@ export default function BlogSection() {
                 </div>
               </Link>
             ))}
-          </div>
-          <div className="layout-grid">
-            <div className="info">
-              <Link href="/blog" className="blog-section__more a-div cta">
-                <span className="label">All posts</span>
-                <ArrowIcon />
-              </Link>
-            </div>
           </div>
         </div>
       </div>

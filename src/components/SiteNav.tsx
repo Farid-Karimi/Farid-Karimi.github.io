@@ -14,7 +14,9 @@ export default function SiteNav() {
   return (
     <nav className={`site-nav${open ? " open" : ""}`}>
       <div className={`site-nav__main${open ? " active" : ""}`} onClick={toggle} role="button" aria-expanded={open}>
-        <div></div>
+        <div>
+          <span className="site-nav__logo">FK</span>
+        </div>
         <div>
           <span className="ui-icon ham">
             <svg width="28" height="4" viewBox="0 0 28 4" fill="none" xmlns="http://www.w3.org/2000/svg">
