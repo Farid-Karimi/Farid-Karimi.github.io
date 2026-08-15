@@ -263,11 +263,11 @@
 h1 {
   text-transform: uppercase;
   font-family: "FK Roman Standard", sans-serif;
-  font-size: 88px;
+  font-size: clamp(44px, 12vw, 88px);
   font-weight: 300;
   font-style: normal;
   line-height: 90%;
-  letter-spacing: -5.28px;
+  letter-spacing: -0.04em;
 }
 
 @media (min-width: 800px) {
@@ -1498,16 +1498,16 @@ button {
   color: var(--theme-contrast);
   text-transform: uppercase;
   font-family: NON Natural Grotesk, sans;
-  font-size: clamp(56px, max(56px + 0vw, min(56px + 0vw, 56px)), 56px);
+  font-size: clamp(40px, 12.5vw, 56px);
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: -2.24px;
+  letter-spacing: -1.8px;
 }
 
 @media (min-width: 800px) {
   .home-hero__title > div {
-    font-size: clamp(130px, max(92.5px + 4.6875vw, min(-20px + 12.5vw, 220px)), 220px);
-    letter-spacing: -6.4px;
+    font-size: clamp(104px, max(74px + 3.75vw, min(-16px + 10vw, 176px)), 176px);
+    letter-spacing: -5.12px;
   }
 }
 
@@ -1626,6 +1626,14 @@ button {
 
 .home-marquee__sep {
   color: var(--theme-contrast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 0.85em;
 }
 
 @keyframes marquee-scroll {
@@ -1683,21 +1691,22 @@ button {
   margin-top: var(--spacer-24);
 }
 
-.home-projects__nav {
+.home-projects__carousel {
   position: relative;
   margin-top: var(--spacer-24);
-  display: flex;
-  justify-content: flex-end;
-  gap: var(--spacer-4);
 }
 
 .home-projects__nav-btn {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   width: 36px;
   height: 36px;
   border: 1px solid var(--grey-200);
   border-radius: 50%;
-  background-color: transparent;
+  background-color: rgba(9, 9, 9, 0.55);
+  backdrop-filter: blur(12px) saturate(1.4);
   color: var(--theme-fg);
   display: flex;
   align-items: center;
@@ -1705,6 +1714,14 @@ button {
   cursor: pointer;
   transition: background-color 0.35s var(--ease-out-cubic), color 0.35s var(--ease-out-cubic),
     border-color 0.35s var(--ease-out-cubic);
+}
+
+.home-projects__nav-btn.prev {
+  left: 12px;
+}
+
+.home-projects__nav-btn.next {
+  right: 12px;
 }
 
 .home-projects__nav-btn:first-child .ui-icon {
@@ -1720,12 +1737,12 @@ button {
 @media (hover: hover) and (pointer: fine) {
   .home-projects__nav-btn:hover {
     background-color: var(--theme-contrast);
+    border-color: var(--theme-contrast);
     color: var(--black);
   }
 }
 
 .home-projects__grid {
-  margin-top: var(--spacer-24);
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: min(85%, 420px);
@@ -1799,6 +1816,7 @@ button {
   margin: var(--spacer-12);
   font-size: clamp(64px, max(64px + 0vw, min(24px + 5vw, 128px)), 128px);
   line-height: 0.8;
+  letter-spacing: -0.02em;
   color: var(--black);
 }
 
@@ -2146,7 +2164,7 @@ button {
 @media (min-width: 800px) {
   .home-contact__split {
     grid-template-columns: 7fr 9fr;
-    gap: var(--spacer-64);
+    gap: 40px;
     margin-top: var(--spacer-80);
   }
 }

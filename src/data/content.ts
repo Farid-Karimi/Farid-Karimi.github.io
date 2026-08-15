@@ -13,7 +13,7 @@ export const site = {
 };
 
 export const hero = {
-  headline: "FARID KARIMI.",
+  headline: "FARID KARIMI",
   subtitle:
     "ML systems end-to-end — recommenders, LLM agents, bioinformatics pipelines.",
   statusLine: "CS @ Shahid Beheshti University · B.Sc. 2026",
