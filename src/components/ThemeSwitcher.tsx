@@ -12,6 +12,8 @@ function applyTheme(theme: Theme) {
   if (!site) return;
   site.classList.remove(...THEME_CLASSES);
   site.classList.add(`theme-${theme}`);
+  site.dataset.theme = theme;
+  window.dispatchEvent(new CustomEvent("dfly-theme", { detail: theme }));
 }
 
 export default function ThemeSwitcher() {

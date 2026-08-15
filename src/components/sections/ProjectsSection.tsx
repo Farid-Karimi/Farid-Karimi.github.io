@@ -36,8 +36,6 @@ export default function ProjectsSection() {
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
                 <span className="project-card__media">
-                  <span className="gradient-shader project-card__shader" />
-                  <span className="grain-layer" />
                   <span className="project-card__number display">0{i + 1}</span>
                 </span>
                 <span className="project-card__meta">

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { FOOTER_COPYRIGHT } from "@/data/site";
-import ArrowIcon from "./ArrowIcon";
 import CrosshairIcon from "./CrosshairIcon";
 
 export default function SiteFooter() {
@@ -21,15 +20,6 @@ export default function SiteFooter() {
 
   return (
     <footer className="site-footer">
-      <div className="site-footer__content layout-block">
-        <span className="h2-alt letter-f default animate">
-          <span>F</span>
-        </span>
-        <ArrowIcon variant="horizontal" />
-        <span className="h2-alt letter-k default animate">
-          <span>K</span>
-        </span>
-      </div>
       <div className="site-footer__overlay">
         <div className="layout-grid">
           <div className="site-footer__overlay--item">

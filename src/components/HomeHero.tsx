@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { hero, site } from "@/data/content";
 import ArrowIcon from "./ArrowIcon";
-import DragonflyScene from "./DragonflyScene";
+import GrainientBackground from "./GrainientBackground";
 
 export default function HomeHero() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function HomeHero() {
 
   return (
     <section id="hero" className="home-hero layout-block">
-      <DragonflyScene />
+      <GrainientBackground />
       <div className="home-hero__title">
         <div>
           {chars.map((char, i) => (

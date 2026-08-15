@@ -45,7 +45,6 @@ export default function BlogSection() {
                   role="tab"
                   aria-selected={tag === activeTag}
                 >
-                  <span className="grain-layer" />
                   <span className="label">{tag}</span>
                 </div>
               ))}

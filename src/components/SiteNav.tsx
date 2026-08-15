@@ -4,7 +4,6 @@ import { useState } from "react";
 import { NAV_FOOTER_LINKS, NAV_ITEMS } from "@/data/site";
 import ArrowIcon from "./ArrowIcon";
 import ThemeSwitcher from "./ThemeSwitcher";
-import UiLogo from "./UiLogo";
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -15,9 +14,7 @@ export default function SiteNav() {
   return (
     <nav className={`site-nav${open ? " open" : ""}`}>
       <div className={`site-nav__main${open ? " active" : ""}`} onClick={toggle} role="button" aria-expanded={open}>
-        <div>
-          <UiLogo />
-        </div>
+        <div></div>
         <div>
           <span className="ui-icon ham">
             <svg width="28" height="4" viewBox="0 0 28 4" fill="none" xmlns="http://www.w3.org/2000/svg">
