@@ -2345,33 +2345,7 @@ button {
 }
 
 .blog-section__more {
-  position: relative;
   margin-top: var(--spacer-32);
-  width: max-content;
-  height: 40px;
-  padding: var(--spacer-12) 0;
-  display: flex;
-  align-items: center;
-  gap: var(--spacer-8);
-  color: var(--theme-fg);
-  transition: color 0.35s var(--ease-out-cubic);
-}
-
-.blog-section__more .ui-icon {
-  width: 12px;
-  height: auto;
-  display: flex;
-  transform: translate(-4px);
-  transition: transform 0.35s var(--ease-in-out-sine);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .blog-section__more:hover {
-    color: var(--theme-contrast);
-  }
-  .blog-section__more:hover .ui-icon {
-    transform: translate(0);
-  }
 }
 
 /* ===== Blog page ===== */
