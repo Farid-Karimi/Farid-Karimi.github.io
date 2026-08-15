@@ -2337,6 +2337,8 @@ button {
 }
 
 .blog-post__back {
+  position: relative;
+  z-index: 2;
   color: var(--grey-300);
   width: max-content;
   transition: color 0.35s var(--ease-out-cubic);
