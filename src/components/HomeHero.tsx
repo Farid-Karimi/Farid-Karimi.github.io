@@ -17,7 +17,7 @@ export default function HomeHero() {
               className="char"
               style={{ animationDelay: `${400 + i * 45}ms` }}
             >
-              {char}
+{char === " " ? "\u00A0" : char}
             </span>
           ))}
         </div>

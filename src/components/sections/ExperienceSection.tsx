@@ -1,4 +1,5 @@
 import { certificates, education, experience } from "@/data/content";
+import ArrowIcon from "../ArrowIcon";
 
 export default function ExperienceSection() {
   return (
@@ -15,7 +16,7 @@ export default function ExperienceSection() {
         <div className="common-info__content">
           <div className="layout-grid">
             <div className="info">
-              <h2 className="display">Teaching, leading, reviewing</h2>
+              <h2 className="display">Engineering, teaching, mentoring</h2>
             </div>
           </div>
           <div className="home-experience__list">
@@ -48,12 +49,21 @@ export default function ExperienceSection() {
             <div className="info">
               <div className="label">Certificates</div>
               {certificates.map((cert) => (
-                <div className="certificate-item" key={cert.title}>
-                  <div className="p">{cert.title}</div>
-                  <div className="label mid-grey">
-                    {cert.issuer} · {cert.date}
-                  </div>
-                </div>
+                <a
+                  className="certificate-item a-div"
+                  href={cert.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={cert.title}
+                >
+                  <span className="certificate-item__body">
+                    <span className="p">{cert.title}</span>
+                    <span className="label mid-grey">
+                      {cert.issuer} · {cert.date}
+                    </span>
+                  </span>
+                  <ArrowIcon variant="external" className="external" />
+                </a>
               ))}
             </div>
           </div>

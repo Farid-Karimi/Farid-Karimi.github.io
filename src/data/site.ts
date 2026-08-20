@@ -159,7 +159,7 @@ export const FOOTER_COPYRIGHT = `Ⓒ ${site.name} 2026`;
 export const FOOTER_BLURB = {
   label: "FARID KARIMI.",
   blurb:
-    "From raw data to deployed systems — recommenders, LLM agents, and bioinformatics pipelines. Currently finishing my B.Sc. at Shahid Beheshti University.",
+    "AI/ML Engineer building intelligent systems that turn research into practical tools.",
 };
 
 export const SITE = site;

@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Farid Karimi — Portfolio (dragonfly-style)
 
-## Getting Started
+A static Next.js portfolio deployed to GitHub Pages. All site content lives in editable
+data files — you never need to touch components to update text.
 
-First, run the development server:
+## How to update content
+
+Edit any file below in GitHub's web editor (or locally) and commit to `main`.
+A GitHub Action rebuilds the site and publishes it to GitHub Pages automatically.
+
+| What you want to change | File |
+|---|---|
+| Name, email, socials, form endpoint | `src/content/site.json` → `site` |
+| Hero headline / subtitle / status line | `src/content/site.json` → `hero` |
+| Marquee (skills ticker) | `src/content/site.json` → `marquee` |
+| Services section | `src/content/site.json` → `services` |
+| About paragraphs + hook | `src/content/site.json` → `about` |
+| Stats (the 3 numbers) | `src/content/site.json` → `stats` |
+| Projects + modal details | `src/content/site.json` → `projects` |
+| Experience entries | `src/content/site.json` → `experience` |
+| Education + certificates | `src/content/site.json` → `education`, `certificates` |
+| Contact channels | `src/content/site.json` → `contactChannels` |
+| Blog posts | `src/content/blog/*.md` (frontmatter: `title`, `date`, `tags`, `excerpt`) |
+| Nav menu + footer links | `src/data/site.ts` |
+
+JSON is forgiving: mind trailing commas (no trailing commas allowed) and valid
+quotes. If the deploy fails, GitHub Actions shows the error on the repo's
+"Actions" tab.
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the
+static export (`out/`) and publishes it to Pages. Set Pages source to
+"GitHub Actions" in repo Settings → Pages once.
