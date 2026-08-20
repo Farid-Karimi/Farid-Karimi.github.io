@@ -1,0 +1,77 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js","/_next/static/chunks/2f46xsom3mfc-.js"],""]
+3:T11eb,<p>Apple just dropped a research paper that should make you question everything you&#39;ve heard about AI reasoning.</p>
+<p>It&#39;s called &quot;The Illusion of Thinking&quot;. The title is not subtle.</p>
+<p>Six researchers tested the most advanced reasoning models available: OpenAI o1 and o3, DeepSeek R1, Claude 3.7 Sonnet Thinking, and Google Gemini Flash Thinking. They didn&#39;t use standard benchmarks. They used classic logic puzzles like the Tower of Hanoi, the river-crossing problem, and block-stacking challenges.</p>
+<p>The results are brutal.</p>
+<h2>Three performance regimes</h2>
+<p>The researchers identified three distinct patterns:</p>
+<p>Low complexity. Standard models without reasoning capabilities actually outperform the fancy reasoning models. The extra thinking gets in the way.</p>
+<p>Medium complexity. This is where reasoning models shine. The additional thinking tokens provide a real advantage.</p>
+<p>High complexity. Complete collapse. Both models fail entirely. Accuracy drops to zero.</p>
+<p>The models don&#39;t just struggle. They give up.</p>
+<h2>The counter-intuitive scaling limit</h2>
+<p>Here&#39;s the strangest finding.</p>
+<p>As problems get harder, reasoning models initially increase their effort. They use more tokens. They &quot;think&quot; harder.</p>
+<p>But at a certain point, something flips. Despite having an adequate token budget, the models reduce their output. They stop trying.</p>
+<p>The paper suggests this might be a form of internal uncertainty estimation. The model implicitly detects that the task is beyond its capabilities and abandons the effort.</p>
+<h2>The Tower of Hanoi test</h2>
+<p>Take the Tower of Hanoi puzzle. You have disks stacked on three pegs. The goal is to move all disks to the third peg without placing a larger disk on a smaller one.</p>
+<p>It&#39;s a simple problem. Humans can solve it by following a recursive algorithm.</p>
+<p>Claude 3.7 Sonnet and DeepSeek R1 start failing when you add a fifth disk. With eight disks, they collapse completely.</p>
+<p>The models literally tell you they&#39;re stopping to save tokens.</p>
+<h2>The rebuttal</h2>
+<p>Not everyone agrees with Apple&#39;s framing.</p>
+<p>Alex Lawsen from Open Philanthropy published a detailed rebuttal called &quot;The Illusion of the Illusion of Thinking&quot;. He argues that Apple&#39;s experimental design has problems.</p>
+<p>First, token limits. At the point where Apple claims models collapse, models were hitting their output ceilings.</p>
+<p>Second, impossible puzzles. Apple&#39;s river-crossing test included unsolvable instances. Models were penalized for recognizing that and refusing to solve them.</p>
+<p>Third, rigid evaluation. Apple&#39;s automated scripts judged models solely by complete move lists, even when the task exceeded token limits.</p>
+<p>Lawsen reran the tests. He asked models to generate recursive code that solves the puzzle instead of listing every move. The models had no trouble solving 15-disk Hanoi problems.</p>
+<h2>The middle ground</h2>
+<p>A subsequent paper from Spanish researchers tried to clarify the debate.</p>
+<p>They replicated and refined both contested benchmarks. Their finding? Both sides have a point.</p>
+<p>The Tower of Hanoi failures weren&#39;t purely about output constraints. LRMs genuinely struggle with cognitive limitations when complexity rises moderately.</p>
+<p>But the river-crossing results were a different story. Once you limit tests to solvable problems, LRMs effortlessly solve large instances with over 100 agent pairs.</p>
+<h2>What this means for you</h2>
+<p>The debate matters for one simple reason: money.</p>
+<p>Billions are being poured into reasoning models. Companies are betting that these systems can solve complex real-world problems.</p>
+<p>Apple&#39;s research suggests there&#39;s a ceiling. Beyond a certain complexity, throwing more processing power at the problem doesn&#39;t help.</p>
+<p>The practical takeaway? Focus AI on structured, low-to-mid complexity tasks. Don&#39;t expect it to formulate high-level strategy or solve chaotic real-world problems.</p>
+<p>Use it to extract key points from contracts. Create summaries. Automate straightforward workflows. Leave the complex reasoning to humans.</p>
+<p>The models are useful. But they&#39;re not thinking. They&#39;re pattern-matching at scale.</p>
+<p>And once the puzzle gets hard enough, even the pattern-matching stops.</p>
+<p>Source: <a href="https://machinelearning.apple.com/research/illusion-of-thinking">https://machinelearning.apple.com/research/illusion-of-thinking</a></p>
+7:X
+c:X
+c:C
+0:{"buildId":"1-O5GAkAklzy46IPomwPs","data":[{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"blog-post layout-block","children":["$","div",null,{"className":"common-info","children":[["$","div",null,{"className":"common-info__title","role":"heading","aria-level":2,"children":[["$","div",null,{"className":"common-info__title--line h2-fluid theme-contrast","children":["$","span",null,{"children":"05"}]}],["$","div",null,{"className":"common-info__title--line has-label h2-fluid","data-section":"Sec-05","children":["$","span",null,{"children":"Blog"}]}]]}],["$","div",null,{"className":"common-info__content","children":[["$","div",null,{"className":"layout-grid","children":["$","div",null,{"className":"info","children":[["$","$L2",null,{"href":"/blog","className":"blog-post__back label","children":"← All posts"}],["$","h1",null,{"className":"display","children":"Apple's AI research exposes the illusion of thinking"}],["$","div",null,{"className":"blog-post__meta","children":[["$","span",null,{"className":"label","children":"Jul 12, 2026"}],[["$","span","AI",{"className":"label","children":["#","AI"]}],["$","span","Research",{"className":"label","children":["#","Research"]}]]]}]]}]}],["$","div",null,{"className":"layout-grid","children":["$","div",null,{"className":"info","children":["$","div",null,{"className":"blog-post__body","dangerouslySetInnerHTML":{"__html":"$3"}}]}]}]]}]]}]}],["$L4"],"$L5"]}],"isPartial":"$@6","staleTime":"$7","varyParams":null},{"rsc":"$L8","isPartial":"$@9","staleTime":"$7","varyParams":null},{"rsc":"$La","isPartial":"$@b","staleTime":"$7","varyParams":"$c"},{"rsc":"$Ld","isPartial":"$@e","staleTime":"$7","varyParams":"$c"},{"rsc":"$Lf","isPartial":"$@10","staleTime":"$7","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@11","rootVaryParams":null,"needsRuntimeRequest":"$@12"}
+13:I[97367,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"OutletBoundary"]
+14:"$Sreact.suspense"
+16:I[97367,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"ViewportBoundary"]
+17:I[97367,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"MetadataBoundary"]
+18:I[27201,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"IconMark"]
+19:I[39756,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"default"]
+1a:I[37457,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"default"]
+1c:I[55667,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"ReactLenis"]
+1d:I[20531,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"default"]
+:HL["/_next/static/chunks/1pejvxe41ew-1.css","style"]
+4:["$","script","script-0",{"src":"/_next/static/chunks/2f46xsom3mfc-.js","async":true}]
+5:["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]
+8:["$","$1","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L17",null,{"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Farid Karimi — ML Systems & Bioinformatics"}],["$","meta","1",{"name":"description","content":"ML systems end-to-end — recommenders, LLM agents, bioinformatics pipelines. CS @ Shahid Beheshti University, B.Sc. 2026."}],["$","link","2",{"rel":"icon","href":"/icon.svg?icon.2z5xxtlp18zyo.svg","sizes":"any","type":"image/svg+xml"}],["$","$L18","3",{}]]}]}]}],null]}]
+a:["$","$1","c",{"children":[null,["$","$L19",null,{"parallelRouterKey":"children","template":["$","$L1a",null,{}]}]]}]
+d:["$","$1","c",{"children":[null,["$","$L19",null,{"parallelRouterKey":"children","template":["$","$L1a",null,{}]}]]}]
+1b:T55c,:root{--mode-grotesk:#FA4C14;--mode-starboy:#DE1609;--mode-dawnfm:#D1CEC9;--mode-mdm:#AD3F18;--mode-afterhours:#7A0A18;}:root[data-theme="grotesk"]{--theme-bg:#000000;--theme-fg:#F2F2F2;--theme-contrast:#FA4C14;--theme-display-name:"NON Natural Grotesk", "NON Natural Grotesk";--theme-display-mult:1;--theme-scrim:0.25;--theme-tracking:-5.12px;--theme-tracking-mobile:-1.8px;}:root[data-theme="starboy"]{--theme-bg:#090811;--theme-fg:#F2F2F2;--theme-contrast:#DE1609;--theme-display-name:"Frisans Std Black", "NON Natural Grotesk";--theme-display-mult:1;--theme-scrim:0.08;--theme-tracking:-5.12px;--theme-tracking-mobile:-1.8px;}:root[data-theme="dawnfm"]{--theme-bg:#020406;--theme-fg:#F2F2F2;--theme-contrast:#D1CEC9;--theme-display-name:"Klarissa", "NON Natural Grotesk";--theme-display-mult:1;--theme-scrim:0.15;--theme-tracking:-5.12px;--theme-tracking-mobile:-1.8px;}:root[data-theme="mdm"]{--theme-bg:#000000;--theme-fg:#F2F2F2;--theme-contrast:#AD3F18;--theme-display-name:"Engravers MT Bold", "NON Natural Grotesk";--theme-display-mult:0.7;--theme-scrim:0.1;--theme-tracking:-5.12px;--theme-tracking-mobile:-1.8px;}:root[data-theme="afterhours"]{--theme-bg:#2B2613;--theme-fg:#A9C1B3;--theme-contrast:#7A0A18;--theme-display-name:"After Hours", "NON Natural Grotesk";--theme-display-mult:1;--theme-scrim:0.1;--theme-tracking:-7px;--theme-tracking-mobile:-2.4px;}f:["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1pejvxe41ew-1.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/35xa5l63_or81.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/3me0vacvnxoe9.js","async":true}]],["$","html",null,{"lang":"en","data-theme":"grotesk","children":["$","body",null,{"className":"is-disabled","suppressHydrationWarning":true,"children":[["$","style",null,{"id":"theme-styles","dangerouslySetInnerHTML":{"__html":"$1b"}}],["$","$L1c",null,{"root":true,"options":{"anchors":true},"children":["$","div",null,{"id":"site","className":"theme-grotesk","children":[["$","header",null,{"className":"site-header","children":["$","div",null,{"className":"site-header__overlay","children":["$","div",null,{"className":"layout-grid","children":[["$","div",null,{"className":"site-header__overlay--item","children":["$","svg",null,{"width":"8","height":"8","viewBox":"0 0 8 8","fill":"none","xmlns":"http://www.w3.org/2000/svg","children":[["$","path",null,{"d":"M3.99512 0V8","stroke":"var(--crosshair)"}],["$","path",null,{"d":"M8 3.99512L-5.96046e-08 3.99512","stroke":"var(--crosshair)"}]]}]}],["$","div",null,{"className":"site-header__overlay--item","children":["$","svg",null,{"width":"8","height":"8","viewBox":"0 0 8 8","fill":"none","xmlns":"http://www.w3.org/2000/svg","children":[["$","path",null,{"d":"M3.99512 0V8","stroke":"var(--crosshair)"}],["$","path",null,{"d":"M8 3.99512L-5.96046e-08 3.99512","stroke":"var(--crosshair)"}]]}]}]]}]}]}],["$","$L1d",null,{}],["$","$L19",null,{"parallelRouterKey":"children","template":["$","$L1a",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}],"$L1e","$L1f"]}]}]]}]}]]}]
+20:I[90928,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"default"]
+21:I[8745,["/_next/static/chunks/35xa5l63_or81.js","/_next/static/chunks/3me0vacvnxoe9.js"],"default"]
+15:null
+1e:["$","$L20",null,{}]
+1f:["$","$L21",null,{}]
+12:true
+7:300
+7:C
+11:0
+9:"$undefined"
+b:"$undefined"
+e:"$undefined"
+10:"$undefined"
+6:"$undefined"
