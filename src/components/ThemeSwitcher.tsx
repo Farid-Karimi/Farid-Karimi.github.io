@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import type { Theme } from "@/data/site";
 
-const THEMES: Theme[] = ["starboy", "dawnfm", "mdm"];
+const THEMES: Theme[] = ["starboy", "dawnfm", "mdm", "afterhours"];
 const THEME_LABELS: Record<Theme, string> = {
   starboy: "Starboy",
   dawnfm: "DawnFM",
   mdm: "MDM",
+  afterhours: "After Hours",
 };
 const LEGACY_MAP: Record<string, Theme> = {
   orange: "starboy",

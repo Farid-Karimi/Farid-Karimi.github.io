@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import Grainient from "./Grainient";
 import type { Theme } from "@/data/site";
 
-const THEME_COLORS: Record<Theme, { color1: string; color2: string }> = {
-  starboy: { color1: "#11072c", color2: "#ca0836" },
-  dawnfm: { color1: "#020406", color2: "#133440" },
-  mdm: { color1: "#090e0c", color2: "#4c2211" },
+const THEME_COLORS: Record<Theme, { color1: string; color2: string; gamma: number; contrast: number }> = {
+  starboy: { color1: "#ca0836", color2: "#11072c", gamma: 1.2, contrast: 1.0 },
+  dawnfm: { color1: "#133440", color2: "#020406", gamma: 1.0, contrast: 1.2 },
+  mdm: { color1: "#4c2211", color2: "#090e0c", gamma: 1.2, contrast: 1.0 },
+  afterhours: { color1: "#a66d38", color2: "#090a0f", gamma: 1.0, contrast: 1.0 },
 };
 
 const LEGACY_MAP: Record<string, Theme> = {
@@ -22,7 +23,7 @@ export default function GrainientBackground() {
   useEffect(() => {
     const saved = window.localStorage.getItem("dfly-theme");
     const mapped = saved ? LEGACY_MAP[saved] : undefined;
-    if (mapped || saved === "starboy" || saved === "dawnfm" || saved === "mdm") {
+    if (mapped || saved === "starboy" || saved === "dawnfm" || saved === "mdm" || saved === "afterhours") {
       setTheme((mapped || saved) as Theme);
     }
     const onTheme = (e: Event) => {
@@ -54,8 +55,8 @@ export default function GrainientBackground() {
         grainAmount={0.08}
         grainScale={2.0}
         grainAnimated={false}
-        contrast={1.5}
-        gamma={0.65}
+        contrast={colors.contrast}
+        gamma={colors.gamma}
         saturation={1.0}
         centerX={0.0}
         centerY={0.0}

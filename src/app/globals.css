@@ -60,6 +60,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "After Hours";
+  src: local("After Hours"), url(/fonts/modes/afterhours.otf) format(opentype);
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --black: #000;
   --black-0: transparent;
@@ -138,6 +146,7 @@
   --starboy: #e2b710;
   --dawnfm: #d1cec9;
   --mdm: #9e3c17;
+  --afterhours: #84091b;
   --orange-0: rgba(250, 76, 20, 0);
   --orange-5: rgba(250, 76, 20, 0.05);
   --orange-10: rgba(250, 76, 20, 0.1);
@@ -244,24 +253,39 @@
 }
 
 :root[data-theme="starboy"] {
-  --theme-bg: #11072c;
+  --theme-bg: #ca0836;
   --theme-fg: #f2f2f2;
   --theme-contrast: #e2b710;
   --theme-display-name: "Frisans Std Black", "NON Natural Grotesk";
+  --theme-display-mult: 1;
+  --theme-scrim: 0.08;
 }
 
 :root[data-theme="dawnfm"] {
-  --theme-bg: #020406;
+  --theme-bg: #133440;
   --theme-fg: #f2f2f2;
   --theme-contrast: #d1cec9;
   --theme-display-name: "Klarissa", "NON Natural Grotesk";
+  --theme-display-mult: 1;
+  --theme-scrim: 0.15;
 }
 
 :root[data-theme="mdm"] {
-  --theme-bg: #090e0c;
+  --theme-bg: #4c2211;
   --theme-fg: #f2f2f2;
   --theme-contrast: #9e3c17;
   --theme-display-name: "Engravers MT Bold", "NON Natural Grotesk";
+  --theme-display-mult: 0.78;
+  --theme-scrim: 0.1;
+}
+
+:root[data-theme="afterhours"] {
+  --theme-bg: #a66d38;
+  --theme-fg: #f2f2f2;
+  --theme-contrast: #84091b;
+  --theme-display-name: "After Hours", "NON Natural Grotesk";
+  --theme-display-mult: 1;
+  --theme-scrim: 0.1;
 }
 
 .theme-contrast {
@@ -287,7 +311,7 @@
 .grainient-bg__scrim {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, var(--theme-scrim, 0.25));
 }
 
 .display,
@@ -981,7 +1005,7 @@ button {
   width: 100%;
   height: 24px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 4px;
   background-color: transparent;
   padding: 0 var(--spacer-4) var(--spacer-4) var(--spacer-4);
@@ -1017,8 +1041,12 @@ button {
   background-color: var(--dawnfm);
 }
 
-.site-nav__themes > div:last-child {
+.site-nav__themes > div:nth-child(3) {
   background-color: var(--mdm);
+}
+
+.site-nav__themes > div:last-child {
+  background-color: var(--afterhours);
 }
 
 .site-nav .ui-icon {
@@ -1510,7 +1538,7 @@ button {
   color: var(--theme-contrast);
   text-transform: uppercase;
   font-family: var(--theme-display-name, "NON Natural Grotesk"), sans;
-  font-size: clamp(40px, 12.5vw, 56px);
+  font-size: calc(clamp(40px, 12.5vw, 56px) * var(--theme-display-mult, 1));
   font-weight: 400;
   line-height: 100%;
   letter-spacing: -1.8px;
@@ -1518,7 +1546,10 @@ button {
 
 @media (min-width: 800px) {
   .home-hero__title > div {
-    font-size: clamp(104px, max(74px + 3.75vw, min(-16px + 10vw, 176px)), 176px);
+    font-size: calc(
+      clamp(104px, max(74px + 3.75vw, min(-16px + 10vw, 176px)), 176px) *
+        var(--theme-display-mult, 1)
+    );
     letter-spacing: -5.12px;
   }
 }
@@ -1526,6 +1557,11 @@ button {
 .home-hero__title .char {
   display: inline-block;
   animation: dfly-char-in 0.8s var(--ease-out-cubic) both;
+}
+
+.home-hero__title .char-space {
+  width: 0.16em;
+  overflow: hidden;
 }
 
 @keyframes dfly-char-in {

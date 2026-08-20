@@ -14,7 +14,7 @@ export default function HomeHero() {
           {chars.map((char, i) => (
             <span
               key={`${char}-${i}`}
-              className="char"
+              className={char === " " ? "char char-space" : "char"}
               style={{ animationDelay: `${400 + i * 45}ms` }}
             >
 {char === " " ? "\u00A0" : char}
