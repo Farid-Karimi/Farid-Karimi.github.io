@@ -1,6 +1,6 @@
 import { site } from "./content";
 
-export type Theme = "orange" | "pink" | "purple";
+export type Theme = "starboy" | "dawnfm" | "mdm";
 
 export interface Media {
   src: string;

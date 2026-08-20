@@ -4,18 +4,27 @@ import { useEffect, useState } from "react";
 import Grainient from "./Grainient";
 import type { Theme } from "@/data/site";
 
-const THEME_COLORS: Record<Theme, { color2: string }> = {
-  orange: { color2: "#ce4012" },
-  pink: { color2: "#c21f9b" },
-  purple: { color2: "#3f1ad1" },
+const THEME_COLORS: Record<Theme, { color1: string; color2: string }> = {
+  starboy: { color1: "#11072c", color2: "#ca0836" },
+  dawnfm: { color1: "#020406", color2: "#133440" },
+  mdm: { color1: "#090e0c", color2: "#4c2211" },
+};
+
+const LEGACY_MAP: Record<string, Theme> = {
+  orange: "starboy",
+  pink: "dawnfm",
+  purple: "mdm",
 };
 
 export default function GrainientBackground() {
-  const [theme, setTheme] = useState<Theme>("orange");
+  const [theme, setTheme] = useState<Theme>("starboy");
 
   useEffect(() => {
     const saved = window.localStorage.getItem("dfly-theme");
-    if (saved === "pink" || saved === "purple" || saved === "orange") setTheme(saved);
+    const mapped = saved ? LEGACY_MAP[saved] : undefined;
+    if (mapped || saved === "starboy" || saved === "dawnfm" || saved === "mdm") {
+      setTheme((mapped || saved) as Theme);
+    }
     const onTheme = (e: Event) => {
       const t = (e as CustomEvent<string>).detail as Theme;
       if (t) setTheme(t);
@@ -29,9 +38,9 @@ export default function GrainientBackground() {
   return (
     <div className="grainient-bg" aria-hidden="true">
       <Grainient
-        color1="#000000"
+        color1={colors.color1}
         color2={colors.color2}
-        color3="#000000"
+        color3={colors.color1}
         timeSpeed={0.4}
         colorBalance={-0.07}
         warpStrength={0}

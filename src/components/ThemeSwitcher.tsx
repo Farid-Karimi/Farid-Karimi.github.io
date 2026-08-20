@@ -3,26 +3,37 @@
 import { useEffect, useState } from "react";
 import type { Theme } from "@/data/site";
 
-const THEMES: Theme[] = ["orange", "pink", "purple"];
+const THEMES: Theme[] = ["starboy", "dawnfm", "mdm"];
+const THEME_LABELS: Record<Theme, string> = {
+  starboy: "Starboy",
+  dawnfm: "DawnFM",
+  mdm: "MDM",
+};
+const LEGACY_MAP: Record<string, Theme> = {
+  orange: "starboy",
+  pink: "dawnfm",
+  purple: "mdm",
+};
 const THEME_CLASSES = THEMES.map((t) => `theme-${t}`);
 
 function applyTheme(theme: Theme) {
   if (typeof window === "undefined") return;
+  document.documentElement.dataset.theme = theme;
   const site = document.getElementById("site");
   if (!site) return;
   site.classList.remove(...THEME_CLASSES);
   site.classList.add(`theme-${theme}`);
-  site.dataset.theme = theme;
   window.dispatchEvent(new CustomEvent("dfly-theme", { detail: theme }));
 }
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<Theme>("orange");
+  const [theme, setTheme] = useState<Theme>("starboy");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const saved = window.localStorage.getItem("dfly-theme");
-    const initial = saved && (THEMES as string[]).includes(saved) ? (saved as Theme) : "orange";
+    const mapped = saved ? LEGACY_MAP[saved] : undefined;
+    const initial = mapped || (THEMES as string[]).includes(saved ?? "") ? (saved as Theme) : "starboy";
     setTheme(initial);
     applyTheme(initial);
   }, []);
@@ -42,7 +53,7 @@ export default function ThemeSwitcher() {
           key={t}
           className={theme === t ? "active" : ""}
           onClick={() => select(t)}
-          aria-label={`${t} theme`}
+          aria-label={`${THEME_LABELS[t]} theme`}
         />
       ))}
     </div>
