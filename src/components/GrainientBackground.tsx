@@ -6,6 +6,7 @@ import themes from "@/content/themes.json";
 import type { Theme } from "@/data/site";
 
 const THEME_COLORS: Record<Theme, { color1: string; color2: string; gamma: number; contrast: number }> = {
+  grotesk: { color1: themes.grotesk.background1, color2: themes.grotesk.background2, gamma: themes.grotesk.gamma, contrast: themes.grotesk.contrast },
   starboy: { color1: themes.starboy.background1, color2: themes.starboy.background2, gamma: themes.starboy.gamma, contrast: themes.starboy.contrast },
   dawnfm: { color1: themes.dawnfm.background1, color2: themes.dawnfm.background2, gamma: themes.dawnfm.gamma, contrast: themes.dawnfm.contrast },
   mdm: { color1: themes.mdm.background1, color2: themes.mdm.background2, gamma: themes.mdm.gamma, contrast: themes.mdm.contrast },
@@ -13,18 +14,19 @@ const THEME_COLORS: Record<Theme, { color1: string; color2: string; gamma: numbe
 };
 
 const LEGACY_MAP: Record<string, Theme> = {
-  orange: "starboy",
+  orange: "grotesk",
   pink: "dawnfm",
   purple: "mdm",
 };
 
 export default function GrainientBackground() {
-  const [theme, setTheme] = useState<Theme>("starboy");
+  const [theme, setTheme] = useState<Theme>("grotesk");
 
   useEffect(() => {
     const saved = window.localStorage.getItem("dfly-theme");
     const mapped = saved ? LEGACY_MAP[saved] : undefined;
-    if (mapped || saved === "starboy" || saved === "dawnfm" || saved === "mdm" || saved === "afterhours") {
+    const valid = saved === "grotesk" || saved === "starboy" || saved === "dawnfm" || saved === "mdm" || saved === "afterhours";
+    if (mapped || valid) {
       setTheme((mapped || saved) as Theme);
     }
     const onTheme = (e: Event) => {

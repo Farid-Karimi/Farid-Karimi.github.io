@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="starboy">
+    <html lang="en" data-theme="grotesk">
       <body className="is-disabled" suppressHydrationWarning>
         <ThemeStyles />
         <ReactLenis root options={{ anchors: true }}>
-          <div id="site" className="theme-starboy">
+          <div id="site" className="theme-grotesk">
             <SiteHeader />
             <SiteNav />
             {children}

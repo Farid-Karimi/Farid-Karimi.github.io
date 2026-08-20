@@ -3,18 +3,20 @@
 import { useEffect, useState } from "react";
 import type { Theme } from "@/data/site";
 
-const THEMES: Theme[] = ["starboy", "dawnfm", "mdm", "afterhours"];
+const THEMES: Theme[] = ["grotesk", "starboy", "dawnfm", "mdm", "afterhours"];
 const THEME_LABELS: Record<Theme, string> = {
+  grotesk: "Original",
   starboy: "Starboy",
   dawnfm: "DawnFM",
   mdm: "MDM",
   afterhours: "After Hours",
 };
 const LEGACY_MAP: Record<string, Theme> = {
-  orange: "starboy",
+  orange: "grotesk",
   pink: "dawnfm",
   purple: "mdm",
 };
+const UNLOCK_KEY = "dfly-unlocked";
 const THEME_CLASSES = THEMES.map((t) => `theme-${t}`);
 
 function applyTheme(theme: Theme) {
@@ -28,15 +30,22 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<Theme>("starboy");
+  const [theme, setTheme] = useState<Theme>("grotesk");
+  const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    const isUnlocked = window.localStorage.getItem(UNLOCK_KEY) === "1";
+    setUnlocked(isUnlocked);
     const saved = window.localStorage.getItem("dfly-theme");
     const mapped = saved ? LEGACY_MAP[saved] : undefined;
-    const initial = mapped || (THEMES as string[]).includes(saved ?? "") ? (saved as Theme) : "starboy";
+    const valid = (THEMES as string[]).includes(saved ?? "");
+    const initial = isUnlocked && (mapped || valid) ? ((mapped || saved) as Theme) : "grotesk";
     setTheme(initial);
     applyTheme(initial);
+    const onUnlock = () => setUnlocked(true);
+    window.addEventListener("dfly-unlocked", onUnlock);
+    return () => window.removeEventListener("dfly-unlocked", onUnlock);
   }, []);
 
   const select = (t: Theme) => {
@@ -47,16 +56,20 @@ export default function ThemeSwitcher() {
     }
   };
 
+  if (!unlocked) return null;
+
   return (
-    <div className="site-nav__themes">
-      {THEMES.map((t) => (
-        <div
-          key={t}
-          className={theme === t ? "active" : ""}
-          onClick={() => select(t)}
-          aria-label={`${THEME_LABELS[t]} theme`}
-        />
-      ))}
+    <div className="navigation-item site-nav__themes-wrap">
+      <div className="site-nav__themes">
+        {THEMES.map((t) => (
+          <div
+            key={t}
+            className={theme === t ? "active" : ""}
+            onClick={() => select(t)}
+            aria-label={`${THEME_LABELS[t]} theme`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

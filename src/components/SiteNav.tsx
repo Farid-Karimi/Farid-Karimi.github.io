@@ -92,9 +92,7 @@ export default function SiteNav() {
             ))}
           </div>
         </div>
-        <div className="navigation-item site-nav__themes-wrap" style={{ transitionDelay: open ? "430ms" : "0ms" }}>
-          <ThemeSwitcher />
-        </div>
+        <ThemeSwitcher />
       </div>
     </nav>
   );

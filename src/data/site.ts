@@ -1,6 +1,6 @@
 import { site } from "./content";
 
-export type Theme = "starboy" | "dawnfm" | "mdm" | "afterhours";
+export type Theme = "grotesk" | "starboy" | "dawnfm" | "mdm" | "afterhours";
 
 export interface Media {
   src: string;
