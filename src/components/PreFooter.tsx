@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { FOOTER_BLURB, FOOTER_COPYRIGHT, FOOTER_SECTIONS, resolveHref } from "@/data/site";
+import { FOOTER_BLURB, FOOTER_SECTIONS, resolveHref } from "@/data/site";
 import ArrowIcon from "./ArrowIcon";
 
 export default function PreFooter() {
@@ -42,17 +42,9 @@ export default function PreFooter() {
           </div>
         ))}
       </div>
-      <div className="site-pre-footer__logo">
-        <div id="starlogo" />
-        <div id="copyright" className="site-pre-footer__copyright">
-          <span className="label">{FOOTER_COPYRIGHT}</span>
-        </div>
-      </div>
       <div className="common-info">
-        <div className="common-info__title" role="heading" aria-level={2}>
-          <div className="common-info__title--line h2-fluid">
-            <span>{FOOTER_BLURB.label}</span>
-          </div>
+        <div className="common-info__title">
+          <div className="common-info__title--line" />
         </div>
         <div className="common-info__content">
           <div className="layout-grid">

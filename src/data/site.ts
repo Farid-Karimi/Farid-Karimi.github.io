@@ -157,7 +157,6 @@ export const FOOTER_SECTIONS: FooterSection[] = [
 export const FOOTER_COPYRIGHT = `Ⓒ ${site.name} 2026`;
 
 export const FOOTER_BLURB = {
-  label: "FARID KARIMI.",
   blurb:
     "AI/ML Engineer building intelligent systems that turn research into practical tools.",
 };
