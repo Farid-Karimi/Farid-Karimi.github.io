@@ -1,7 +1,7 @@
 @font-face {
   font-family: "FK Roman Standard";
   src: local("FK Roman Standard Light"),
-    url(/fonts/FKRomanStandard-Light.woff2) format(woff2);
+    url(/wubba/fonts/FKRomanStandard-Light.woff2) format(woff2);
   font-display: swap;
   font-weight: 300;
   font-style: normal;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: "NON Natural Grotesk";
   src: local("NON Natural Grotesk Regular"), local("NON Natural Grotesk"),
-    url(/fonts/NON-Natural-Grotesk-Regular.woff2) format(woff2);
+    url(/wubba/fonts/NON-Natural-Grotesk-Regular.woff2) format(woff2);
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -19,7 +19,7 @@
 @font-face {
   font-family: "NON Natural Grotesk";
   src: local("NON Natural Grotesk Bold"),
-    url(/fonts/NON-Natural-Grotesk-Bold.woff2) format(woff2);
+    url(/wubba/fonts/NON-Natural-Grotesk-Bold.woff2) format(woff2);
   font-display: swap;
   font-weight: 700;
   font-style: normal;
@@ -28,7 +28,7 @@
 @font-face {
   font-family: "NON Natural Mono";
   src: local("NON Natural Mono Light"),
-    url(/fonts/non-natural-mono-light.woff2) format(woff2);
+    url(/wubba/fonts/non-natural-mono-light.woff2) format(woff2);
   font-display: swap;
   font-weight: 300;
   font-style: normal;
@@ -37,7 +37,7 @@
 @font-face {
   font-family: "Frisans Std Black";
   src: local("Frisans Std Black"),
-    url(/fonts/modes/frisans-std-black.otf) format(opentype);
+    url(/wubba/fonts/modes/frisans-std-black.otf) format(opentype);
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -45,7 +45,7 @@
 
 @font-face {
   font-family: "Klarissa";
-  src: local("Klarissa"), url(/fonts/modes/klarissa.ttf) format(truetype);
+  src: local("Klarissa"), url(/wubba/fonts/modes/klarissa.ttf) format(truetype);
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -54,7 +54,7 @@
 @font-face {
   font-family: "Engravers MT Bold";
   src: local("Engravers MT Bold"),
-    url(/fonts/modes/engravers-mt-bold.ttf) format(truetype);
+    url(/wubba/fonts/modes/engravers-mt-bold.ttf) format(truetype);
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -62,7 +62,7 @@
 
 @font-face {
   font-family: "After Hours";
-  src: local("After Hours"), url(/fonts/modes/afterhours.otf) format(opentype);
+  src: local("After Hours"), url(/wubba/fonts/modes/afterhours.otf) format(opentype);
   font-display: swap;
   font-weight: 400;
   font-style: normal;
