@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 106 192" height="192" width="106"><defs><filter color-interpolation-filters="sRGB" id="dfly-white"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0" type="matrix"></feColorMatrix></filter></defs><g filter="url(#dfly-white)">
+<defs><filter id="grayscale"><feColorMatrix values="0" type="saturate"></feColorMatrix></filter></defs>
+<g filter="url(#grayscale)">
+<path fill="#F3F3F3" d="M0 191.99L45.8955 152.759V0L0 41.3726V191.99Z"></path>
+<path fill="#F3F3F3" d="M59.8846 192L105.78 152.845V92.001L59.8846 133.258V192Z"></path>
+</g>
+</g></svg>
