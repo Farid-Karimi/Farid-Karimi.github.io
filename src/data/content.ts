@@ -5,7 +5,6 @@ export const hero = siteData.hero;
 export const marquee = siteData.marquee;
 export const services = siteData.services;
 export const about = siteData.about;
-export const stats = siteData.stats;
 export const projects = siteData.projects;
 export const experience = siteData.experience;
 export const education = siteData.education;

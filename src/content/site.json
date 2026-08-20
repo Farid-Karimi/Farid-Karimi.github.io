@@ -65,11 +65,6 @@
       "I believe great software comes from balancing curiosity with engineering discipline. I like exploring new ideas, but I care just as much about clean implementation, maintainability, and building products that deliver real value."
     ]
   },
-  "stats": [
-    { "value": "2nd", "label": "ranked in CS class" },
-    { "value": "2M+", "label": "photo views on Unsplash" },
-    { "value": "30", "label": "projects shipped" }
-  ],
   "projects": [
     {
       "slug": "ai-research-agent",

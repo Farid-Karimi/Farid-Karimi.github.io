@@ -1,5 +1,4 @@
 import { about } from "@/data/content";
-import StatsSection from "./StatsSection";
 
 const LABELS = ["What I build", "My background", "How I work"];
 
@@ -29,7 +28,6 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
-          <StatsSection />
         </div>
       </div>
     </section>

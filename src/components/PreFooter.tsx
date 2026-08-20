@@ -50,11 +50,8 @@ export default function PreFooter() {
       </div>
       <div className="common-info">
         <div className="common-info__title" role="heading" aria-level={2}>
-          <div className="common-info__title--line h2-fluid theme-contrast">
-            <span>{FOOTER_BLURB.label}</span>
-          </div>
           <div className="common-info__title--line has-label h2-fluid" data-section="Info">
-            <span />
+            <span>{FOOTER_BLURB.label}</span>
           </div>
         </div>
         <div className="common-info__content">
