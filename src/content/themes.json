@@ -1,0 +1,58 @@
+{
+  "starboy": {
+    "label": "Starboy",
+    "font": "Frisans Std Black",
+    "background1": "#091523",
+    "background2": "#AF002D",
+    "accent": "#E2B710",
+    "foreground": "#F2F2F2",
+    "fontScale": 1,
+    "tracking": -5.12,
+    "trackingMobile": -1.8,
+    "scrim": 0.08,
+    "gamma": 1.2,
+    "contrast": 1.0
+  },
+  "dawnfm": {
+    "label": "DawnFM",
+    "font": "Klarissa",
+    "background1": "#020406",
+    "background2": "#133440",
+    "accent": "#D1CEC9",
+    "foreground": "#F2F2F2",
+    "fontScale": 1,
+    "tracking": -5.12,
+    "trackingMobile": -1.8,
+    "scrim": 0.15,
+    "gamma": 1.0,
+    "contrast": 1.2
+  },
+  "mdm": {
+    "label": "MDM",
+    "font": "Engravers MT Bold",
+    "background1": "#070B0C",
+    "background2": "#080C0D",
+    "accent": "#AD3F18",
+    "foreground": "#F2F2F2",
+    "fontScale": 0.78,
+    "tracking": -5.12,
+    "trackingMobile": -1.8,
+    "scrim": 0.1,
+    "gamma": 1.2,
+    "contrast": 1.0
+  },
+  "afterhours": {
+    "label": "After Hours",
+    "font": "After Hours",
+    "background1": "#25211B",
+    "background2": "#06050A",
+    "accent": "#7A0A18",
+    "foreground": "#F2F2F2",
+    "fontScale": 1,
+    "tracking": -7,
+    "trackingMobile": -2.4,
+    "scrim": 0.1,
+    "gamma": 1.0,
+    "contrast": 1.0
+  }
+}

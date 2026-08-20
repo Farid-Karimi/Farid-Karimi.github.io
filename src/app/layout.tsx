@@ -5,6 +5,7 @@ import PreFooter from "@/components/PreFooter";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import SiteNav from "@/components/SiteNav";
+import ThemeStyles from "@/components/ThemeStyles";
 
 export const metadata: Metadata = {
   title: "Farid Karimi — ML Systems & Bioinformatics",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" data-theme="starboy">
       <body className="is-disabled" suppressHydrationWarning>
+        <ThemeStyles />
         <ReactLenis root options={{ anchors: true }}>
           <div id="site" className="theme-starboy">
             <SiteHeader />

@@ -143,10 +143,6 @@
   --mid-grey-95: hsla(0, 0%, 49%, 0.95);
 
   --orange: #fa4c14;
-  --starboy: #e2b710;
-  --dawnfm: #d1cec9;
-  --mdm: #9e3c17;
-  --afterhours: #84091b;
   --orange-0: rgba(250, 76, 20, 0);
   --orange-5: rgba(250, 76, 20, 0.05);
   --orange-10: rgba(250, 76, 20, 0.1);
@@ -252,40 +248,15 @@
   }
 }
 
-:root[data-theme="starboy"] {
-  --theme-bg: #ca0836;
+:root {
+  --theme-bg: #000;
   --theme-fg: #f2f2f2;
   --theme-contrast: #e2b710;
-  --theme-display-name: "Frisans Std Black", "NON Natural Grotesk";
+  --theme-display-name: "NON Natural Grotesk";
   --theme-display-mult: 1;
-  --theme-scrim: 0.08;
-}
-
-:root[data-theme="dawnfm"] {
-  --theme-bg: #133440;
-  --theme-fg: #f2f2f2;
-  --theme-contrast: #d1cec9;
-  --theme-display-name: "Klarissa", "NON Natural Grotesk";
-  --theme-display-mult: 1;
-  --theme-scrim: 0.15;
-}
-
-:root[data-theme="mdm"] {
-  --theme-bg: #4c2211;
-  --theme-fg: #f2f2f2;
-  --theme-contrast: #9e3c17;
-  --theme-display-name: "Engravers MT Bold", "NON Natural Grotesk";
-  --theme-display-mult: 0.78;
-  --theme-scrim: 0.1;
-}
-
-:root[data-theme="afterhours"] {
-  --theme-bg: #a66d38;
-  --theme-fg: #f2f2f2;
-  --theme-contrast: #84091b;
-  --theme-display-name: "After Hours", "NON Natural Grotesk";
-  --theme-display-mult: 1;
-  --theme-scrim: 0.1;
+  --theme-scrim: 0.25;
+  --theme-tracking: -5.12px;
+  --theme-tracking-mobile: -1.8px;
 }
 
 .theme-contrast {
@@ -1034,19 +1005,19 @@ button {
 }
 
 .site-nav__themes > div:first-child {
-  background-color: var(--starboy);
+  background-color: var(--mode-starboy);
 }
 
 .site-nav__themes > div:nth-child(2) {
-  background-color: var(--dawnfm);
+  background-color: var(--mode-dawnfm);
 }
 
 .site-nav__themes > div:nth-child(3) {
-  background-color: var(--mdm);
+  background-color: var(--mode-mdm);
 }
 
 .site-nav__themes > div:last-child {
-  background-color: var(--afterhours);
+  background-color: var(--mode-afterhours);
 }
 
 .site-nav .ui-icon {
@@ -1541,7 +1512,7 @@ button {
   font-size: calc(clamp(40px, 12.5vw, 56px) * var(--theme-display-mult, 1));
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: -1.8px;
+  letter-spacing: var(--theme-tracking-mobile, -1.8px);
 }
 
 @media (min-width: 800px) {
@@ -1550,7 +1521,7 @@ button {
       clamp(104px, max(74px + 3.75vw, min(-16px + 10vw, 176px)), 176px) *
         var(--theme-display-mult, 1)
     );
-    letter-spacing: -5.12px;
+    letter-spacing: var(--theme-tracking, -5.12px);
   }
 }
 

@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Grainient from "./Grainient";
+import themes from "@/content/themes.json";
 import type { Theme } from "@/data/site";
 
 const THEME_COLORS: Record<Theme, { color1: string; color2: string; gamma: number; contrast: number }> = {
-  starboy: { color1: "#ca0836", color2: "#11072c", gamma: 1.2, contrast: 1.0 },
-  dawnfm: { color1: "#133440", color2: "#020406", gamma: 1.0, contrast: 1.2 },
-  mdm: { color1: "#4c2211", color2: "#090e0c", gamma: 1.2, contrast: 1.0 },
-  afterhours: { color1: "#a66d38", color2: "#090a0f", gamma: 1.0, contrast: 1.0 },
+  starboy: { color1: themes.starboy.background1, color2: themes.starboy.background2, gamma: themes.starboy.gamma, contrast: themes.starboy.contrast },
+  dawnfm: { color1: themes.dawnfm.background1, color2: themes.dawnfm.background2, gamma: themes.dawnfm.gamma, contrast: themes.dawnfm.contrast },
+  mdm: { color1: themes.mdm.background1, color2: themes.mdm.background2, gamma: themes.mdm.gamma, contrast: themes.mdm.contrast },
+  afterhours: { color1: themes.afterhours.background1, color2: themes.afterhours.background2, gamma: themes.afterhours.gamma, contrast: themes.afterhours.contrast },
 };
 
 const LEGACY_MAP: Record<string, Theme> = {
